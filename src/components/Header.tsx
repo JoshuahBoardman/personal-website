@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import ThemeToggle from './ThemeToggle';
 
 export default function Header() {
 	return (
@@ -20,10 +21,7 @@ export default function Header() {
 				<button className="font-[inherit] cursor-pointer border-none bg-transparent px-2 py-3.25 rounded-lg transition-[color,background] duration-200 text-text2"><Link href="/articles">Articles</Link></button>
 				<button className="font-[inherit] cursor-pointer border-none bg-transparent px-2 py-3.25 rounded-lg transition-[color,background] duration-200 text-text2"><Link href="/projects">Projects</Link></button>
 				<button className="font-[inherit] cursor-pointer border-none bg-transparent px-2 py-3.25 rounded-lg transition-[color,background] duration-200 text-text2"><Link href="/about">About</Link></button>
-				<button className="font-[inherit] cursor-pointer ml-2 flex items-center gap-2 border-none bg-surface shadow-[inset_0_0_0_1px_var(--line)] text-text2 px-2
-				py-3 rounded-lg transition-[backgroud] duration-200">
-					<span className="w-2.25 h-2.25 rounded-[50%] shadow-[0_0_8px_color-mix(in_oklab,var(--gold)_70%,transparent)] bg-gold"></span> Dark
-				</button>
+				<ThemeToggle />
 			</nav>
 		</header>
 	);

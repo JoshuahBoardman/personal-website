@@ -1,69 +1,102 @@
-import Image from "next/image";
+import Link from "next/link";
+import { getAllPosts } from "@/lib/content";
+import { PostType, ArticleFrontMatter, ProjectFrontMatter } from "@/types";
+import Clock from "@/components/Clock";
+import SmallHomeArticleCard from "@/components/SmallHomeArticleCard";
+
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+
+	const articles = getAllPosts<ArticleFrontMatter>(PostType.Article).sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime());
+	const activeProjects = getAllPosts<ProjectFrontMatter>(PostType.Project).filter((project) => project.data.status === "active");
+
+	const updatedDate = new Date()
+		.toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })
+		.toUpperCase()
+		.replace(",", "");
+
+	return (
+		<div className="max-w-270 my-0 mx-auto">
+			<div className="flex items-baseline justify-between gap-4 mb-4.5 flex-wrap">
+				<h1 className="text-[30px] leading-[1.2]">What I'm doing right now</h1>
+				<span className="text-[11px] tracking-widest uppercase text-text2 font-mono">Updated {updatedDate}</span>
+			</div>
+			<div className="grid grid-cols-4 gap-3.5">
+
+				<Link href={`/articles/${articles[0].slug}`} className="col-span-2 row-span-2">
+					<article className="flex flex-col justify-between gap-7 rounded-2xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-7.5 cursor-pointer transition-[background,transform,box-shadow] duration-200 ease w-full h-full">
+						<div className="flex items-center gap-2.5 text-[11px] tracking-widest uppercase text-text2 font-mono">
+							<span className="w-1.75 h-1.75 rounded-xs bg-rust"></span> Latest
+						</div>
+						<div className="flex flex-col gap-4">
+							<h2 className="text-[40px] leading-[1.08]">{articles[0].data.name}</h2>
+							<p className="text-[17px] leading-[1.65] max-w-[46ch] text-text2">{articles[0].data.description}</p>
+							<div className="flex items-center gap-2.5 flex-wrap text-[11px] tracking-[0.06em] uppercase font-mono">
+								{/*TODO: Limit the number of tags that display with elipses*/}
+								{articles[0].data.tags.map(tag =>
+
+									<span key={`${articles[0].slug}-${tag}`} className="py-1 px-2.25 rounded-[999px] border border-olive/40 text-olive">{tag}</span>
+								)}
+								<span className="text-text2">{articles[0].data.date}</span>
+							</div>
+						</div>
+					</article>
+				</Link>
+
+				<SmallHomeArticleCard article={articles[1]} />
+
+				<SmallHomeArticleCard article={articles[2]} />
+
+				{/* This is for stats that I would like to keep people up to date with */}
+				<section className="col-span-2 rounded-2xl py-5.5 px-6 bg-screen shadow-[inset_0_0_0_1px_rgba(163,181,121,.18)] flex flex-col gap-3.5 font-mono">
+					<div className="flex items-center justify-between text-[11px] tracking-[.14em] uppercase text-screen-text opacity-55">
+						<span>Currently</span> < Clock />
+					</div>
+					<div className="flex gap-3.5 items-baseline text-[13px] leading-normal text-screen-text">
+						<span className="min-w-21.5 opacity-55 tracking-[.08em] uppercase text-[11px]">Reading</span> <span>Entangled Life - Merlin Sheldrake</span>
+					</div>
+					<div className="flex gap-3.5 items-baseline text-[13px] leading-normal text-screen-text">
+						<span className="min-w-21.5 opacity-55 tracking-[.08em] uppercase text-[11px]">Learning</span> <span>Entangled Life - Merlin Sheldrake</span>
+					</div>
+
+					{ /*<div className="flex gap-3.5 items-baseline text-[13px] leading-normal text-screen-text">
+						<span className="min-w-21.5 opacity-55 tracking-[.08em] uppercase text-[11px]">Practicing</span> <span>Portrait of Tracy — harmonics, slowly</span>
+					</div> */ }
+					<div className="flex gap-3.5 items-baseline text-[13px] leading-normal text-screen-text">
+						<span className="min-w-21.5 opacity-55 tracking-[.08em] uppercase text-[11px]">Building</span> <span>Fat Lotto - Weighted Lottery Group Decision Bot</span>
+					</div>
+					<div className="flex gap-3.5 items-baseline text-[13px] leading-normal text-screen-text">
+						<span className="min-w-21.5 opacity-55 tracking-[.08em] uppercase text-[11px]">Steeping</span> <span>2019 Bulang sheng, 6g gaiwan</span>
+					</div>
+
+				</section>
+
+				<Link href={`/projects/${activeProjects[0].slug}`} className="col-span-2 ">
+					<article className="rounded-2xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-5.5 flex flex-col gap-4 cursor-pointer transition-[background,transform] duration-200 ease w-full h-full">
+						<div className="flex items-center gap-2.5 text-[11px] tracking-widest uppercase text-text2 font-mono">
+							<span className="w-1.75 h-1.75 rounded-xs bg-olive"></span> Active Project
+						</div>
+						<h3 className="text-[26px] leading-[1.15]">{activeProjects[0].data.name}</h3>
+						<p className="text-[16px] leading-[1.6] text-text2">{activeProjects[0].data.description}</p>
+						<div className="flex gap-2 flex-wrap text-[11px] tracking-[.06em] uppercase text-text2 font-mono">
+							{activeProjects[0].data.tags.map(tag =>
+
+								<span key={`${activeProjects[0].slug}-${tag}`} className="py-1 px-2.25 rounded-md bg-bg shadow-[inset_0_0_0_1px_var(--line)]">{tag}</span>
+							)}
+						</div>
+					</article>
+				</Link>
+
+				<SmallHomeArticleCard article={articles[3]} />
+
+
+				<Link href="/articles" >
+					<button className="cursor-pointer text-left border-none rounded-xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-5.5 min-h-47.5 flex flex-col justify-between gap-4 text-[12px] tracking-[.08em] uppercase transition-[background,transform] duration-200 ease text-text2 font-mono w-full h-full">
+						<span className="">Icon</span>
+						<span className="text-[15px] tracking-[0.06em]">All Writting<br></br> <span className="opacity-[0.7] text-[11px]">8 Pieces</span></span>
+					</button>
+				</Link>
+			</div >
+		</div >
+	);
 }

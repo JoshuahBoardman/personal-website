@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { remark } from "remark";
-import html from "remark-html";
+
 
 import { getPost, getAllPosts, generateHtml, extractHeaders } from "@/lib/content";
 import { PostType, ArticleFrontMatter } from "@/types";
 import RelatedPosts from "@/components/RelatedPosts";
 import TableOfContents from "@/components/TableOfContents";
+import Tags from "@/components/Tags";
 
 
 export function generateStaticParams() {
@@ -39,9 +40,7 @@ export default async function Page(
 			<div className="flex flex-col gap-5.5 max-w-[70ch]">
 				<Link href="/articles"><span className="self-start border-none bg-transparent p-0 text-[11px] tracking-[.1em] uppercase text-text2 font-mono">← Articles</span> </Link>
 				< div className="flex gap-2 flex-wrap text-[11px] tracking-[.06em] uppercase font-mono">
-					{article.data.tags.map(tag =>
-						<span key={`${article.data.name}-${tag}`} className="py-1 px-2.5 rounded-[999px] border border-rust/40 text-rust">{tag}</span>
-					)}
+					<Tags<ArticleFrontMatter> postType={PostType.Article} post={article} />
 				</div>
 				<h1 className="text-[46px] leading-[1.06] tracking-[-.02em]">{article.data.name}</h1>
 				<div className="flex gap-4 flex-wrap text-xs tracking-[.06em] border-t border-line pt-4 text-text2 font-mono">

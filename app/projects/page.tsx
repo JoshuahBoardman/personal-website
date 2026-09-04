@@ -1,6 +1,7 @@
 import { PostType, ProjectFrontMatter } from "@/types";
 import { getAllPosts } from "@/lib/content";
 import Link from "next/link";
+import Tags from "@/components/Tags";
 
 export default function Projects() {
 
@@ -29,9 +30,7 @@ export default function Projects() {
 							<h3 className="text-[25px] leading-[1.15]">{project.data.name}</h3>
 							<p className="text-base leading-[1.6] text-text2">{project.data.description}</p>
 							<div className="flex gap-2 flex-wrap mt-0.5 text-[11px] tracking-[.06em] uppercase text-text2 font-mono">
-								{project.data.tags.map(tag =>
-									<span key={`${project.data.name}-${tag}`} className="py-1 px-2.25 rounded-md bg-bg shadow-[inset_0_0_0_1px_var(--line)]">{tag}</span>
-								)}
+								<Tags<ProjectFrontMatter> postType={PostType.Project} post={project} />
 							</div>
 						</div>
 					</Link>

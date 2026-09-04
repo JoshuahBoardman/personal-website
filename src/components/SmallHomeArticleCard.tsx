@@ -1,4 +1,5 @@
-import { Post, ArticleFrontMatter } from "@/types";
+import { Post, ArticleFrontMatter, PostType } from "@/types";
+import Tags from "./Tags";
 import Link from "next/link";
 
 export default function SmallHomeArticleCard({ article }: { article: Post<ArticleFrontMatter> }) {
@@ -9,9 +10,7 @@ export default function SmallHomeArticleCard({ article }: { article: Post<Articl
 				<div className="flex flex-col gap-3">
 					<h3 className="text-[21px] leading-[1.2]">{article.data.name}</h3>
 					<div className="flex items-center gap-2.5 flex-wrap text-[11px] tracking-[0.06em] uppercase font-mono">
-						{article.data.tags.map(tag =>
-							<span key={`${article.slug}-${tag}`} className="py-1 px-2.25 rounded-[999px] border border-rust/40 text-rust">{tag}</span>
-						)}
+						<Tags<ArticleFrontMatter> postType={PostType.Article} post={article} maxCount={1} />
 					</div>
 				</div>
 			</article>

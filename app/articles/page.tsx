@@ -1,6 +1,7 @@
 import { PostType, ArticleFrontMatter } from "@/types";
 import { getAllPosts } from "@/lib/content";
 import Link from "next/link";
+import Tags from "@/components/Tags";
 
 
 // TODO: this whole page (filter pads, meter, feed sort/filter) is currently
@@ -111,7 +112,7 @@ export default function Articles() {
 								<p className="text-base leading-[1.6] max-w-[62ch] text-text2">{article.data.description}</p>
 								<div className="flex gap-2 flex-wrap text-[11px] tracking-[.06em] uppercase mt-0.5 font-mono">
 									{/* TODO: Update tags to display an array of tags with a limit of like 3 */}
-									<span className="py-1 px-2.25 rounded-[999px] border border-rust/40 text-rust">{article.data.tags[0]}</span>
+									<Tags<ArticleFrontMatter> postType={PostType.Article} post={article} />
 									<span className="opacity-70 py-1 text-text2">{article.data.duration}</span>
 								</div>
 							</div>

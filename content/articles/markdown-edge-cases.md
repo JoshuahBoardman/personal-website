@@ -2,8 +2,7 @@
 name: "Markdown Edge Cases"
 date: "2026-08-11"
 description: "GFM-only syntax and other odd structural cases, kept unrendered-as-intended on purpose to see exactly how the pipeline degrades."
-tags: ["Software"]
-status: "draft"
+tags: ["Software", "Tea", "TEST", "Music"]
 duration: "4 mins"
 ---
 

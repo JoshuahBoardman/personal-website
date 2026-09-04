@@ -12,6 +12,7 @@
   --rust: #C1502E;
   --olive: #7C8C4D;
   --gold: #9C7522;
+  --ink: #5C5142;
   --line: rgba(43, 33, 24, .14);
   --line2: rgba(43, 33, 24, .07);
   --screen: #1C1712;
@@ -31,6 +32,7 @@
   --rust: #E06B45;
   --olive: #A3B579;
   --gold: #D4A94A;
+  --ink: #A79A85;
   --line: rgba(237, 230, 214, .14);
   --line2: rgba(237, 230,214, .07);
   --screen: #120E0A;
@@ -47,6 +49,7 @@
   --color-rust: var(--rust);
   --color-olive: var(--olive);
   --color-gold: var(--gold);
+  --color-ink: var(--ink);
   --color-line: var(--line);
   --color-line2: var(--line2);
   --color-screen: var(--screen);

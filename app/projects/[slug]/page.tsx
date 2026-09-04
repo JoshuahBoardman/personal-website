@@ -4,6 +4,7 @@ import { getPost, getAllPosts, generateHtml, extractHeaders } from "@/lib/conten
 import { PostType, ProjectFrontMatter } from "@/types";
 import RelatedPosts from "@/components/RelatedPosts";
 import TableOfContents from "@/components/TableOfContents";
+import Tags from "@/components/Tags";
 
 
 export function generateStaticParams() {
@@ -36,9 +37,7 @@ export default async function Page(
 					<span className="self-start border-none bg-transparent p-0 text-[11px] tracking-widest uppercase text-text2 font-mono">← Projects</span>
 				</Link>
 				<div className="flex gap-2 flex-wrap text-[11px] tracking-[.06em] uppercase text-text2 font-mono">
-					{project.data.tags.map(tag =>
-						<span key={`${project.slug} -${tag} `} className="py-1 px-2.25 rounded-md bg-surface shadow-[inset_0_0_0_1px_var(--line)] border-l-2 border-olive">{tag}</span>
-					)}
+					<Tags<ProjectFrontMatter> postType={PostType.Project} post={project} />
 				</div>
 				<h1 className="text-[46px] leading-[1.06] tracking-[-.02em]">{project.data.name}</h1>
 				<p className="text-[19px] leading-[1.7] max-w-[62ch] text-text2">{project.data.description}</p>

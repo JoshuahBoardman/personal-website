@@ -3,6 +3,7 @@ import { getAllPosts } from "@/lib/content";
 import { PostType, ArticleFrontMatter, ProjectFrontMatter } from "@/types";
 import Clock from "@/components/Clock";
 import SmallHomeArticleCard from "@/components/SmallHomeArticleCard";
+import Tags from "@/components/Tags";
 
 
 export default function Home() {
@@ -32,11 +33,7 @@ export default function Home() {
 							<h2 className="text-[40px] leading-[1.08]">{articles[0].data.name}</h2>
 							<p className="text-[17px] leading-[1.65] max-w-[46ch] text-text2">{articles[0].data.description}</p>
 							<div className="flex items-center gap-2.5 flex-wrap text-[11px] tracking-[0.06em] uppercase font-mono">
-								{/*TODO: Limit the number of tags that display with elipses*/}
-								{articles[0].data.tags.map(tag =>
-
-									<span key={`${articles[0].slug}-${tag}`} className="py-1 px-2.25 rounded-[999px] border border-olive/40 text-olive">{tag}</span>
-								)}
+								<Tags<ArticleFrontMatter> postType={PostType.Article} post={articles[0]} />
 								<span className="text-text2">{articles[0].data.date}</span>
 							</div>
 						</div>
@@ -79,10 +76,7 @@ export default function Home() {
 						<h3 className="text-[26px] leading-[1.15]">{activeProjects[0].data.name}</h3>
 						<p className="text-[16px] leading-[1.6] text-text2">{activeProjects[0].data.description}</p>
 						<div className="flex gap-2 flex-wrap text-[11px] tracking-[.06em] uppercase text-text2 font-mono">
-							{activeProjects[0].data.tags.map(tag =>
-
-								<span key={`${activeProjects[0].slug}-${tag}`} className="py-1 px-2.25 rounded-md bg-bg shadow-[inset_0_0_0_1px_var(--line)]">{tag}</span>
-							)}
+							<Tags<ProjectFrontMatter> postType={PostType.Project} post={activeProjects[0]} />
 						</div>
 					</article>
 				</Link>

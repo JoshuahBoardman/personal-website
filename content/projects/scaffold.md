@@ -2,7 +2,7 @@
 name: "Scaffold"
 date: "2026-07-14"
 description: "A small CLI for generating new projects from my own templates instead of re-copying the same starter files every time I begin something."
-tags: ["Software"]
+tags: ["Software", "Writing", "Testing", "Another"]
 status: "active"
 type: "CLI Tool"
 repoLink: "https://github.com/lorem-ipsum/scaffold"

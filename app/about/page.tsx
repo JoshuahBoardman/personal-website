@@ -1,7 +1,7 @@
 
 export default function About() {
 	return (
-		<div className=" w-full flex flex-col gap-14 max-w-205">
+		<div className=" w-full flex flex-col gap-14 max-w-205 fade-up">
 			<section className="grid grid-cols-[300px_1fr] gap-8.5 items-start">
 				<div className="aspect-[4/5] rounded-2xl flex items-end p-3.5 shadow-[inset_0_0_0_1px_var(--line)] bg-[repeating-linear-gradient(135deg,var(--surface),var(--surface)_9px,var(--surface2)_9px,var(--surface2)_18px)]">
 					<span className="text-[10px] tracking-[.12em] uppercase py-1.25 px-2 rounded-md bg-bg text-text2 font-mono">portrait — 4:5</span>

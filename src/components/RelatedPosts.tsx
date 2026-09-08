@@ -15,7 +15,7 @@ export default function <T extends FrontMatter = FrontMatter>({ postType, curren
 		<div className="grid grid-cols-3 gap-3">
 			{relatedPosts.map(post =>
 				<Link href={`/${postType}/${post.slug}`} key={`related-post-${post.slug}`}>
-					<article className="flex flex-col justify-between gap-4 min-h-40 rounded-3.5 bg-surface rounded-[14px] shadow-[inset_0_0_0_1px_var(--line)] border-l-3 border-olive p-5 cursor-pointer h-full w-full">
+					<article className="flex flex-col justify-between gap-4 min-h-40 rounded-3.5 bg-surface rounded-[14px] shadow-[inset_0_0_0_1px_var(--line)] border-l-3 border-olive p-5 cursor-pointer h-full w-full transition-[background,transform] duration-200 ease hover:bg-surface2 hover:-translate-y-[3px]">
 						<span className="text-[11px] tracking-[.08em] uppercase text-text2 font-mono">{post.data.date}</span>
 						<div className="flex flex-col gap-2.5">
 							<h3 className="text-[18px] leading-tight">{post.data.name}</h3>

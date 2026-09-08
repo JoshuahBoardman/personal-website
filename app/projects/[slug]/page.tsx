@@ -31,10 +31,10 @@ export default async function Page(
 	const headers = extractHeaders(project.content);
 
 	return (
-		<div className="flex flex-col gap-11">
+		<div className="flex flex-col gap-11 fade-up">
 			<div className="flex flex-col gap-5.5">
 				<Link href="/projects" >
-					<span className="self-start border-none bg-transparent p-0 text-[11px] tracking-widest uppercase text-text2 font-mono">← Projects</span>
+					<span className="self-start border-none bg-transparent p-0 text-[11px] tracking-widest uppercase text-text2 font-mono transition-colors duration-200 hover:text-rust">← Projects</span>
 				</Link>
 				<div className="flex gap-2 flex-wrap text-[11px] tracking-[.06em] uppercase text-text2 font-mono">
 					<Tags<ProjectFrontMatter> postType={PostType.Project} post={project} />
@@ -48,11 +48,11 @@ export default async function Page(
 				</div>
 				{/* TODO: Update these to link to specified links in the frontmatter */}
 				<div className="flex gap-3 flex-wrap">
-					<span className="rounded-[10px] bg-rust text-on-accent py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono">
+					<span className="rounded-[10px] bg-rust text-on-accent py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[transform,filter] duration-150 hover:-translate-y-0.5 hover:brightness-[1.08]">
 						<Link href={project.data.repoLink} target="_blank" rel="noopener noreferrer">View repository →</Link>
 					</span>
 					{project.data.articleLink &&
-						<span className="rounded-[10px] bg-surface shadow-[inset_0_0_0_1px_var(--line)] py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono">
+						<span className="rounded-[10px] bg-surface shadow-[inset_0_0_0_1px_var(--line)] py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[background,transform] duration-150 hover:bg-surface2 hover:-translate-y-0.5">
 							<Link href={project.data.articleLink} target="_blank" rel="noopener noreferrer">Related writing</Link>
 						</span>}
 				</div>
@@ -69,11 +69,11 @@ export default async function Page(
 			{/* TODO: Decide how to end projects 
 				- I like the buttons, but I'm unsure, if they should be part of the Related Posts section or not */}
 			<div className="flex gap-3 flex-wrap">
-				<span className="rounded-[10px] bg-rust text-on-accent py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono">
+				<span className="rounded-[10px] bg-rust text-on-accent py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[transform,filter] duration-150 hover:-translate-y-0.5 hover:brightness-[1.08]">
 					<Link href={project.data.repoLink} target="_blank" rel="noopener noreferrer">View repository →</Link>
 				</span>
 				{project.data.articleLink &&
-					<span className="rounded-[10px] bg-surface shadow-[inset_0_0_0_1px_var(--line)] py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono">
+					<span className="rounded-[10px] bg-surface shadow-[inset_0_0_0_1px_var(--line)] py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[background,transform] duration-150 hover:bg-surface2 hover:-translate-y-0.5">
 						<Link href={project.data.articleLink} target="_blank" rel="noopener noreferrer">Related writing</Link>
 					</span>}
 			</div>

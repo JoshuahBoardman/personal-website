@@ -17,10 +17,10 @@ export default function Header() {
 				</div>
 			</Link>
 			<nav className="flex items-center gap-1 text-xs tracking-[0.08em] uppercase font-mono">
-				<button className="font-[inherit] cursor-pointer border-none bg-transparent px-2 py-3.25 rounded-lg transition-[color,background] duration-200 text-text2"><Link href="/">Home</Link></button>
-				<button className="font-[inherit] cursor-pointer border-none bg-transparent px-2 py-3.25 rounded-lg transition-[color,background] duration-200 text-text2"><Link href="/articles">Articles</Link></button>
-				<button className="font-[inherit] cursor-pointer border-none bg-transparent px-2 py-3.25 rounded-lg transition-[color,background] duration-200 text-text2"><Link href="/projects">Projects</Link></button>
-				<button className="font-[inherit] cursor-pointer border-none bg-transparent px-2 py-3.25 rounded-lg transition-[color,background] duration-200 text-text2"><Link href="/about">About</Link></button>
+				<button className="font-[inherit] cursor-pointer border-none bg-transparent px-2 py-3.25 rounded-lg transition-[color,background] duration-200 text-text2 hover:text-text hover:bg-surface"><Link href="/">Home</Link></button>
+				<button className="font-[inherit] cursor-pointer border-none bg-transparent px-2 py-3.25 rounded-lg transition-[color,background] duration-200 text-text2 hover:text-text hover:bg-surface"><Link href="/articles">Articles</Link></button>
+				<button className="font-[inherit] cursor-pointer border-none bg-transparent px-2 py-3.25 rounded-lg transition-[color,background] duration-200 text-text2 hover:text-text hover:bg-surface"><Link href="/projects">Projects</Link></button>
+				<button className="font-[inherit] cursor-pointer border-none bg-transparent px-2 py-3.25 rounded-lg transition-[color,background] duration-200 text-text2 hover:text-text hover:bg-surface"><Link href="/about">About</Link></button>
 				<ThemeToggle />
 			</nav>
 		</header>

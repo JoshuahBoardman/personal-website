@@ -36,9 +36,9 @@ export default async function Page(
 	const headers = extractHeaders(article.content);
 
 	return (
-		<div className="flex flex-col gap-11">
+		<div className="flex flex-col gap-11 fade-up">
 			<div className="flex flex-col gap-5.5 max-w-[70ch]">
-				<Link href="/articles"><span className="self-start border-none bg-transparent p-0 text-[11px] tracking-[.1em] uppercase text-text2 font-mono">← Articles</span> </Link>
+				<Link href="/articles"><span className="self-start border-none bg-transparent p-0 text-[11px] tracking-[.1em] uppercase text-text2 font-mono transition-colors duration-200 hover:text-rust">← Articles</span> </Link>
 				< div className="flex gap-2 flex-wrap text-[11px] tracking-[.06em] uppercase font-mono">
 					<Tags<ArticleFrontMatter> postType={PostType.Article} post={article} />
 				</div>

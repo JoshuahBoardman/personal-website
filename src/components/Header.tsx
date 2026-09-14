@@ -33,13 +33,16 @@ export default function Header() {
 					sections.map(section => {
 						const isActive = section.href === "/" ? path === "/" : path.startsWith(section.href);
 						return (
-							<button key={`nav-${section.name}`} data-nav-active={isActive} className="font-[inherit] cursor-pointer border-none bg-transparent px-2 py-3.25 rounded-lg transition-[color,background] duration-200 text-text2 hover:text-text hover:bg-surface">
-								<Link href={section.href}>{section.name}</Link>
-							</button>
+
+							<Link key={`nav-${section.name}`} href={section.href}>
+								<button data-nav-active={isActive} className="font-[inherit] cursor-pointer border-none bg-transparent px-2 py-3.25 rounded-lg transition-[color,background] duration-200 text-text2 hover:text-text hover:bg-surface">
+									{section.name}
+								</button>
+							</Link>
 						)
 					})}
 				<ThemeToggle />
 			</nav>
-		</header>
+		</header >
 	);
 }

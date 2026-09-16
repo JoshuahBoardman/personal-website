@@ -20,7 +20,7 @@ export default function Articles() {
 		<div className="flex flex-col gap-6.5 fade-up">
 			<h1 className="text-[30px] leading-[1.2]">Writing</h1>
 
-			<RadioFilter />
+			<RadioFilter totalItems={8} filteredItems={8} />
 
 			{ /*TODO: Update this to have default displays if a property is missing*/}
 			{/* TODO: Break this out into a article card component */}

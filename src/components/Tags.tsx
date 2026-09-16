@@ -5,6 +5,8 @@ export default function Tags<T extends FrontMatter>({ postType, post, maxCount =
 	const amountOfHiddenTags = post.data.tags.length - maxCount;
 	const displayHiddenTagNumber = amountOfHiddenTags > 0;
 
+	// TODO: I should move this into a json file, for configuring categories.
+	// - This would be pulled in and converted into a type.
 	const TagStyles = {
 		software: "border-rust/40 text-rust",
 		music: "border-olive/40 text-olive",

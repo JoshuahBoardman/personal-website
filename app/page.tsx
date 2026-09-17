@@ -25,7 +25,7 @@ export default function Home() {
 			<div className="grid grid-cols-4 gap-3.5 max-[860px]:grid-cols-1">
 
 				<Link href={`/articles/${articles[0].slug}`} className="col-span-2 row-span-2 min-w-0 max-[860px]:col-span-1 max-[860px]:row-span-1">
-					<article className="flex flex-col justify-between gap-7 rounded-2xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-7.5 cursor-pointer transition-[background,transform,box-shadow] duration-200 ease w-full h-full hover:bg-surface2 hover:-translate-y-[3px] hover:shadow-[inset_0_0_0_1px_var(--line),0_18px_36px_-26px_rgba(0,0,0,.5)]">
+					<article className="flex flex-col justify-between gap-7 rounded-2xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-7.5 cursor-pointer transition-[background,transform,box-shadow] duration-200 ease w-full h-full hover:bg-surface2 hover:-translate-y-0.75 hover:shadow-[inset_0_0_0_1px_var(--line),0_18px_36px_-26px_rgba(0,0,0,.5)]">
 						<div className="flex items-center gap-2.5 text-[11px] tracking-widest uppercase text-text2 font-mono">
 							<span className="w-1.75 h-1.75 rounded-xs bg-rust"></span> Latest
 						</div>
@@ -69,7 +69,7 @@ export default function Home() {
 				</section>
 
 				<Link href={`/projects/${activeProjects[0].slug}`} className="col-span-2 min-w-0 max-[860px]:col-span-1 max-[860px]:row-span-1">
-					<article className="rounded-2xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-5.5 flex flex-col gap-4 cursor-pointer transition-[background,transform] duration-200 ease w-full h-full hover:bg-surface2 hover:-translate-y-[3px]">
+					<article className="rounded-2xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-5.5 flex flex-col gap-4 cursor-pointer transition-[background,transform] duration-200 ease w-full h-full hover:bg-surface2 hover:-translate-y-0.75">
 						<div className="flex items-center gap-2.5 text-[11px] tracking-widest uppercase text-text2 font-mono">
 							<span className="w-1.75 h-1.75 rounded-xs bg-olive"></span> Active Project
 						</div>
@@ -85,7 +85,7 @@ export default function Home() {
 
 
 				<Link href="/articles" className="min-w-0">
-					<button className="cursor-pointer text-left border-none rounded-xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-5.5 min-h-47.5 flex flex-col justify-between gap-4 text-[12px] tracking-[.08em] uppercase transition-[background,transform,color] duration-200 ease text-text2 font-mono w-full h-full hover:bg-rust hover:text-on-accent hover:-translate-y-[3px]">
+					<button className="cursor-pointer text-left border-none rounded-xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-5.5 min-h-47.5 flex flex-col justify-between gap-4 text-[12px] tracking-[.08em] uppercase transition-[background,transform,color] duration-200 ease text-text2 font-mono w-full h-full hover:bg-rust hover:text-on-accent hover:-translate-y-0.75">
 						<span className="">Icon</span>
 						<span className="text-[15px] tracking-[0.06em]">All Writting<br></br> <span className="opacity-[0.7] text-[11px]">8 Pieces</span></span>
 					</button>

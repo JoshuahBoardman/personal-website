@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useRef } from "react";
 import { useRouter } from "next/navigation";
 import Clock from "./Clock";
 import RadioButton from "./RadioButton";
@@ -26,10 +26,33 @@ type FilterAction = { type: "toggle-tag", tag: string }
 const tags = ["software", "music", "tea", "literature"] as const;
 type Tag = (typeof tags)[number];
 
+const FREQS: Record<Tag, number> = { software: 196, music: 261.63, tea: 329.63, literature: 392 };
+
 //TODO: Might want to make this usable for any pare that lists content types
 export default function RadioFilter({ searchParams, totalItems, filteredItems }: { searchParams?: SearchParam, totalItems: number, filteredItems: number }) {
 
 	const router = useRouter();
+	const audioCtxRef = useRef<AudioContext | null>(null);
+
+	function blip(freq: number) {
+		try {
+			audioCtxRef.current ??= new AudioContext();
+			const audioContext = audioCtxRef.current;
+			const startTime = audioContext.currentTime;
+			const oscillator = audioContext.createOscillator();
+			const gainNode = audioContext.createGain();
+			oscillator.type = "triangle";
+			oscillator.frequency.setValueAtTime(freq, startTime);
+			gainNode.gain.setValueAtTime(0.0001, startTime);
+			gainNode.gain.exponentialRampToValueAtTime(0.16, startTime + 0.005);
+			gainNode.gain.exponentialRampToValueAtTime(0.0001, startTime + 0.14);
+			oscillator.connect(gainNode).connect(audioContext.destination);
+			oscillator.start(startTime);
+			oscillator.stop(startTime + 0.16);
+		} catch {
+			// Web Audio unavailable/blocked — fail silently, sound is decorative.
+		}
+	}
 
 	function reducer(state: FilterState, action: FilterAction): FilterState {
 		const newState = structuredClone(state);
@@ -118,14 +141,14 @@ export default function RadioFilter({ searchParams, totalItems, filteredItems }:
 				<RadioWaveBar volume={(state.tags.length === 0 ? 4 : state.tags.length) as 1 | 2 | 3 | 4} />
 			</div>
 
-			<div className="grid grid-cols-[repeat(4,84px)] auto-rows-[84px] gap-2.5 font-mono min-w-0 max-[860px]:grid-cols-[repeat(4,1fr)] max-[860px]:auto-rows-[minmax(72px,auto)] max-[640px]:auto-rows-[minmax(64px,auto)] max-[640px]:gap-1.75">
+			<div className="grid grid-cols-[repeat(4,84px)] auto-rows-21 gap-2.5 font-mono min-w-0 max-[860px]:grid-cols-[repeat(4,1fr)] max-[860px]:auto-rows-[minmax(72px,auto)] max-[640px]:auto-rows-[minmax(64px,auto)] max-[640px]:gap-1.75">
 				{tags.map((tag, index) =>
-					<RadioButton key={`filter-tag-${tag}`} index={index} name={tag} on={state.tags.includes(tag)} handler={() => dispatch({ type: "toggle-tag", tag: `${tag}` })} />
+					<RadioButton key={`filter-tag-${tag}`} index={index} name={tag} on={state.tags.includes(tag)} handler={() => { if (state.soundOn) blip(FREQS[tag]); dispatch({ type: "toggle-tag", tag: `${tag}` }); }} />
 				)}
-				<RadioButton index={5} name={"all"} on={state.tags.length === 0} handler={() => dispatch({ type: "clear-tags" as const })} />
-				<RadioButton index={6} name={state.sort} on={state.sort === "oldest"} handler={() => dispatch({ type: "toggle-sort" as const })} />
-				<RadioButton index={7} name={state.soundOn ? "snd-on" : "snd-off"} on={state.soundOn} handler={() => dispatch({ type: "toggle-sound" })} />
-				<RadioButton index={8} name={"shuffle"} on={false} handler={() => dispatch({ type: "shuffle-tags" })} />
+				<RadioButton index={5} name={"all"} on={state.tags.length === 0} handler={() => { if (state.soundOn) blip(523.25); dispatch({ type: "clear-tags" as const }); }} />
+				<RadioButton index={6} name={state.sort} on={state.sort === "oldest"} handler={() => { if (state.soundOn) blip(440); dispatch({ type: "toggle-sort" as const }); }} />
+				<RadioButton index={7} name={state.soundOn ? "snd-on" : "snd-off"} on={state.soundOn} handler={() => { if (!state.soundOn) blip(587.33); dispatch({ type: "toggle-sound" }); }} />
+				<RadioButton index={8} name={"shuffle"} on={false} handler={() => { if (state.soundOn) blip(146.83); dispatch({ type: "shuffle-tags" }); }} />
 			</div>
 		</section >
 	);

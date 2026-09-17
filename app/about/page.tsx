@@ -3,7 +3,7 @@ export default function About() {
 	return (
 		<div className=" w-full flex flex-col gap-14 max-w-205 fade-up">
 			<section className="grid grid-cols-[300px_1fr] gap-8.5 items-start max-[860px]:grid-cols-1">
-				<div className="aspect-[4/5] rounded-2xl flex items-end p-3.5 shadow-[inset_0_0_0_1px_var(--line)] bg-[repeating-linear-gradient(135deg,var(--surface),var(--surface)_9px,var(--surface2)_9px,var(--surface2)_18px)]">
+				<div className="aspect-4/5 rounded-2xl flex items-end p-3.5 shadow-[inset_0_0_0_1px_var(--line)] bg-[repeating-linear-gradient(135deg,var(--surface),var(--surface)_9px,var(--surface2)_9px,var(--surface2)_18px)]">
 					<span className="text-[10px] tracking-[.12em] uppercase py-1.25 px-2 rounded-md bg-bg text-text2 font-mono">portrait — 4:5</span>
 				</div>
 				<div className="flex flex-col gap-4.5 pt-1">
@@ -19,23 +19,23 @@ export default function About() {
 				<div className="flex flex-col gap-0.5">
 					<div className="grid grid-cols-[44px_1fr] gap-4 items-baseline py-4.5 px-5 rounded-xl mb-2 bg-surface shadow-[inset_0_0_0_1px_var(--line)]">
 						<span className="text-xs tracking-[.06em] text-rust font-mono">01</span>
-						<p className="text-[19px] leading-[1.5] font-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
+						<p className="text-[19px] leading-leading-normal font-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
 					</div>
 					<div className="grid grid-cols-[44px_1fr] gap-4 items-baseline py-4.5 px-5 rounded-xl mb-2 bg-surface shadow-[inset_0_0_0_1px_var(--line)]">
 						<span className="text-xs tracking-[.06em] text-rust font-mono">02</span>
-						<p className="text-[19px] leading-[1.5] font-serif">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+						<p className="text-[19px] leading-leading-normal font-serif">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
 					</div>
 					<div className="grid grid-cols-[44px_1fr] gap-4 items-baseline py-4.5 px-5 rounded-xl mb-2 bg-surface shadow-[inset_0_0_0_1px_var(--line)]">
 						<span className="text-xs tracking-[.06em] text-rust font-mono">03</span>
-						<p className="text-[19px] leading-[1.5] font-serif">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
+						<p className="text-[19px] leading-leading-normal font-serif">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
 					</div>
 					<div className="grid grid-cols-[44px_1fr] gap-4 items-baseline py-4.5 px-5 rounded-xl mb-2 bg-surface shadow-[inset_0_0_0_1px_var(--line)]">
 						<span className="text-xs tracking-[.06em] text-rust font-mono">04</span>
-						<p className="text-[19px] leading-[1.5] font-serif">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
+						<p className="text-[19px] leading-leading-normal font-serif">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
 					</div>
 					<div className="grid grid-cols-[44px_1fr] gap-4 items-baseline py-4.5 px-5 rounded-xl mb-2 bg-surface shadow-[inset_0_0_0_1px_var(--line)]">
 						<span className="text-xs tracking-[.06em] text-rust font-mono">05</span>
-						<p className="text-[19px] leading-[1.5] font-serif">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
+						<p className="text-[19px] leading-leading-normal font-serif">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
 					</div>
 				</div>
 			</section>

@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { remark } from "remark";
 
 
 import { getPost, getAllPosts, generateHtml, extractHeaders } from "@/lib/content";

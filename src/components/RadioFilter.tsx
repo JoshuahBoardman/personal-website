@@ -46,7 +46,8 @@ export default function RadioFilter({ searchParams, totalItems, filteredItems }:
 
 				break;
 			case "sync":
-				newState.sort = action.params.includes("newest") ? "newest" : newState.sort = "oldest";
+				console.log(action.params);
+				newState.sort = action.params.includes("oldest") ? "oldest" : "newest";
 
 				newState.tags = action.params ? action.params.filter(tag => tags.includes(tag as Tag)) : [];
 
@@ -85,7 +86,7 @@ export default function RadioFilter({ searchParams, totalItems, filteredItems }:
 		if (searchParams) {
 			dispatch({ type: "sync", params: searchParams });
 		}
-	}, [searchParams]);
+	}, [searchParams?.join(",")]); //NOTE: I dont think the dependency is needed, but why not...
 
 	useEffect(() => {
 		const urlParams = state.tags.map(tag => {

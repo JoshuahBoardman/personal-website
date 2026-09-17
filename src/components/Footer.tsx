@@ -4,6 +4,9 @@ export default function Footer() {
 	return (
 
 		<footer className="w-full max-w-270 flex flex-col mx-auto mt-20">
+			{/* TODO: MAYBE: When hoving over this, it should animate.
+				- Just not all the time 
+			*/ }
 			<div className="flex items-end gap-1 h-4 w-full">
 				<span className="w-1 h-1.75 rounded-xs bg-rust opacity-28"></span>
 				<span className="w-1 h-3 rounded-xs bg-rust opacity-28"></span>

@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/content";
 import { PostType, ArticleFrontMatter, ProjectFrontMatter } from "@/types";
@@ -5,6 +6,15 @@ import Clock from "@/components/Clock";
 import SmallHomeArticleCard from "@/components/SmallHomeArticleCard";
 import Tags from "@/components/Tags";
 
+export const metadata: Metadata = {
+	title: "JoshuahBoardman.com",
+	description: "Joshuah's cozy corner of the internet.",
+	openGraph: {
+		title: "JoshuahBoardman.com",
+		description: "Joshuah's cozy corner of the internet.",
+		type: "website",
+	},
+};
 
 export default function Home() {
 

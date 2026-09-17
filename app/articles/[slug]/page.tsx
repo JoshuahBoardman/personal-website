@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 
@@ -14,6 +15,22 @@ export function generateStaticParams() {
 }
 
 export const dynamicParams = false
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+	const { slug } = await params;
+	const article = getPost<ArticleFrontMatter>(PostType.Article, slug);
+
+	return {
+		title: article.data.name,
+		description: article.data.description,
+		openGraph: {
+			title: article.data.name,
+			description: article.data.description,
+			type: "article",
+			publishedTime: article.data.date,
+		},
+	};
+}
 
 // TODO: once there's a real content source (CMS/MDX), this becomes
 // `export default async function Page({ params }: PageProps<"/Articles/[slug]">)`

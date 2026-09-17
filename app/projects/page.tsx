@@ -1,7 +1,18 @@
+import type { Metadata } from "next";
 import { PostType, ProjectFrontMatter } from "@/types";
 import { getAllPosts } from "@/lib/content";
 import Link from "next/link";
 import Tags from "@/components/Tags";
+
+export const metadata: Metadata = {
+	title: "Projects",
+	description: "Things I keep coming back to.",
+	openGraph: {
+		title: "Projects",
+		description: "Things I keep coming back to.",
+		type: "website",
+	},
+};
 
 export default function Projects() {
 

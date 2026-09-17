@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { getPost, getAllPosts, generateHtml, extractHeaders } from "@/lib/content";
@@ -14,6 +15,22 @@ export function generateStaticParams() {
 }
 
 export const dynamicParams = false
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+	const { slug } = await params;
+	const project = getPost<ProjectFrontMatter>(PostType.Project, slug);
+
+	return {
+		title: project.data.name,
+		description: project.data.description,
+		openGraph: {
+			title: project.data.name,
+			description: project.data.description,
+			type: "article",
+			publishedTime: project.data.date,
+		},
+	};
+}
 
 export default async function Page(
 	{

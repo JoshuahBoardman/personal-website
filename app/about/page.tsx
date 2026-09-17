@@ -1,3 +1,14 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "About",
+	description: "Developer, bassist, and a few other things. A bit about who I am and what I'm building.",
+	openGraph: {
+		title: "About",
+		description: "Developer, bassist, and a few other things. A bit about who I am and what I'm building.",
+		type: "profile",
+	},
+};
 
 export default function About() {
 	return (

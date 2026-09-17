@@ -26,6 +26,12 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
 	title: "JoshuahBoardman.com",
 	description: "Joshuah's cozy corner of the internet.",
+	openGraph: {
+		title: "JoshuahBoardman.com",
+		description: "Joshuah's cozy corner of the internet.",
+		type: "website",
+		siteName: "JoshuahBoardman.com",
+	},
 };
 
 

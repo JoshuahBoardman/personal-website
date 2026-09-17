@@ -1,8 +1,19 @@
+import type { Metadata } from "next";
 import { PostType, ArticleFrontMatter, FrontMatter, Post } from "@/types";
 import { getAllPosts } from "@/lib/content";
 import Link from "next/link";
 import Tags from "@/components/Tags";
 import RadioFilter from "@/components/RadioFilter";
+
+export const metadata: Metadata = {
+	title: "Writing",
+	description: "The musings of my mind.",
+	openGraph: {
+		title: "Writing",
+		description: "The musings of my mind.",
+		type: "website",
+	},
+};
 
 export default async function Articles({ searchParams }: { searchParams: Promise<{ [key: string]: string | boolean | undefined }> }) {
 

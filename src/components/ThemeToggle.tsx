@@ -30,7 +30,7 @@ export default function ThemeToggle() {
 
 	return (
 		<button onClick={toggleTheme} className="font-[inherit] cursor-pointer ml-2 flex items-center gap-2 border-none bg-surface shadow-[inset_0_0_0_1px_var(--line)] text-text2 px-2
-				py-3 rounded-lg transition-[background] duration-200 hover:bg-surface2">
+				py-3 rounded-lg transition-[background] duration-200 hover:bg-surface2 max-[640px]:col-span-4 max-[640px]:ml-0 max-[640px]:justify-center">
 			<span className="w-2.25 h-2.25 rounded-[50%] shadow-[0_0_8px_color-mix(in_oklab,var(--gold)_70%,transparent)] bg-gold"></span> {capitalizeFirstLetter(theme)}
 		</button>
 

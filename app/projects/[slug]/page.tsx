@@ -39,7 +39,7 @@ export default async function Page(
 				<div className="flex gap-2 flex-wrap text-[11px] tracking-[.06em] uppercase text-text2 font-mono">
 					<Tags<ProjectFrontMatter> postType={PostType.Project} post={project} />
 				</div>
-				<h1 className="text-[46px] leading-[1.06] tracking-[-.02em]">{project.data.name}</h1>
+				<h1 className="text-[46px] leading-[1.06] tracking-[-.02em] max-[640px]:text-[31px]">{project.data.name}</h1>
 				<p className="text-[19px] leading-[1.7] max-w-[62ch] text-text2">{project.data.description}</p>
 				<div className="flex gap-4 flex-wrap items-center text-xs tracking-[.06em] border-t border-line pt-4 text-text2 font-mono">
 					<span className="flex items-center gap-1.75"><span className="w-1.75 h-1.75 rounded-[50%] bg-olive"></span>{project.data.status}</span>
@@ -47,20 +47,20 @@ export default async function Page(
 					<span className="opacity-40">/</span><span>{project.data.type}</span>
 				</div>
 				{/* TODO: Update these to link to specified links in the frontmatter */}
-				<div className="flex gap-3 flex-wrap">
-					<span className="rounded-[10px] bg-rust text-on-accent py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[transform,filter] duration-150 hover:-translate-y-0.5 hover:brightness-[1.08]">
+				<div className="flex gap-3 flex-wrap max-[640px]:flex-col max-[640px]:items-stretch">
+					<span className="rounded-[10px] bg-rust text-on-accent py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[transform,filter] duration-150 hover:-translate-y-0.5 hover:brightness-[1.08] max-[640px]:text-center">
 						<Link href={project.data.repoLink} target="_blank" rel="noopener noreferrer">View repository →</Link>
 					</span>
 					{project.data.articleLink &&
-						<span className="rounded-[10px] bg-surface shadow-[inset_0_0_0_1px_var(--line)] py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[background,transform] duration-150 hover:bg-surface2 hover:-translate-y-0.5">
+						<span className="rounded-[10px] bg-surface shadow-[inset_0_0_0_1px_var(--line)] py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[background,transform] duration-150 hover:bg-surface2 hover:-translate-y-0.5 max-[640px]:text-center">
 							<Link href={project.data.articleLink} target="_blank" rel="noopener noreferrer">Related writing</Link>
 						</span>}
 				</div>
 			</div>
 
-			<div className="grid grid-cols-[1fr_240px] gap-11 items-start">
+			<div className="grid grid-cols-[1fr_240px] gap-11 items-start max-[860px]:grid-cols-1">
 
-				<div className="content flex flex-col gap-6.5 max-w-[66ch]" dangerouslySetInnerHTML={{ __html: contentHtml }} />
+				<div className="content flex flex-col gap-6.5 max-w-[66ch] min-w-0" dangerouslySetInnerHTML={{ __html: contentHtml }} />
 
 				<TableOfContents headers={headers} />
 
@@ -68,12 +68,12 @@ export default async function Page(
 
 			{/* TODO: Decide how to end projects 
 				- I like the buttons, but I'm unsure, if they should be part of the Related Posts section or not */}
-			<div className="flex gap-3 flex-wrap">
-				<span className="rounded-[10px] bg-rust text-on-accent py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[transform,filter] duration-150 hover:-translate-y-0.5 hover:brightness-[1.08]">
+			<div className="flex gap-3 flex-wrap max-[640px]:flex-col max-[640px]:items-stretch">
+				<span className="rounded-[10px] bg-rust text-on-accent py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[transform,filter] duration-150 hover:-translate-y-0.5 hover:brightness-[1.08] max-[640px]:text-center">
 					<Link href={project.data.repoLink} target="_blank" rel="noopener noreferrer">View repository →</Link>
 				</span>
 				{project.data.articleLink &&
-					<span className="rounded-[10px] bg-surface shadow-[inset_0_0_0_1px_var(--line)] py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[background,transform] duration-150 hover:bg-surface2 hover:-translate-y-0.5">
+					<span className="rounded-[10px] bg-surface shadow-[inset_0_0_0_1px_var(--line)] py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[background,transform] duration-150 hover:bg-surface2 hover:-translate-y-0.5 max-[640px]:text-center">
 						<Link href={project.data.articleLink} target="_blank" rel="noopener noreferrer">Related writing</Link>
 					</span>}
 			</div>

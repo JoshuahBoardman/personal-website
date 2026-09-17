@@ -42,14 +42,14 @@ export default async function Page(
 				< div className="flex gap-2 flex-wrap text-[11px] tracking-[.06em] uppercase font-mono">
 					<Tags<ArticleFrontMatter> postType={PostType.Article} post={article} />
 				</div>
-				<h1 className="text-[46px] leading-[1.06] tracking-[-.02em]">{article.data.name}</h1>
+				<h1 className="text-[46px] leading-[1.06] tracking-[-.02em] max-[640px]:text-[31px]">{article.data.name}</h1>
 				<div className="flex gap-4 flex-wrap text-xs tracking-[.06em] border-t border-line pt-4 text-text2 font-mono">
 					<span>{article.data.date}</span><span className="opacity-40">/</span><span>{article.data.duration} read</span>
 				</div>
 			</div>
 
-			<div className="grid grid-cols-[1fr_240px] gap-11 items-start">
-				<div className="content flex flex-col gap-6.5 max-w-[68ch]" dangerouslySetInnerHTML={{ __html: contentHtml }} />
+			<div className="grid grid-cols-[1fr_240px] gap-11 items-start max-[860px]:grid-cols-1">
+				<div className="content flex flex-col gap-6.5 max-w-[68ch] min-w-0" dangerouslySetInnerHTML={{ __html: contentHtml }} />
 				<TableOfContents headers={headers} />
 			</div>
 			<RelatedPosts<ArticleFrontMatter> postType={PostType.Article} currentPost={article} />

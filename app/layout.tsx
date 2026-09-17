@@ -47,7 +47,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 					}}
 				/>
 			</head>
-			<body className="min-h-full flex flex-col pt-0 px-6 pb-24">
+			<body className="min-h-full flex flex-col pt-0 px-6 pb-24 max-[640px]:px-4 max-[640px]:pb-16">
 				<Header />
 				<main className="w-full max-w-270 my-0 mx-auto">
 					{children}

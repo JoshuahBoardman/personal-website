@@ -22,12 +22,6 @@ type FilterAction = { type: "toggle-tag", tag: string }
 	| { type: "toggle-sort" }
 	| { type: "toggle-sound" }
 
-/*Tag {
- name: string,
-style: string,
-soundFreq: number,
-}*/
-
 
 const tags = ["software", "music", "tea", "literature"] as const;
 type Tag = (typeof tags)[number];

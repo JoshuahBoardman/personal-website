@@ -10,6 +10,8 @@ export default function <T extends FrontMatter = FrontMatter>({ postType, curren
 			post.data.tags.some((tag) => currentPost.data.tags.includes(tag))
 	}).sort((a, b) => new Date(b.data.date).getTime() - new Date(a.data.date).getTime()).slice(0, 3);
 
+	if (relatedPosts.length === 0) return null;
+
 	return (<div className="flex flex-col gap-6.5 border-t border-line pt-6.5">
 		<span className="text-[11px] tracking-[.14em] uppercase text-text2 font-mono">Related {postType}</span>
 		<div className="grid grid-cols-3 gap-3 max-[860px]:grid-cols-1">

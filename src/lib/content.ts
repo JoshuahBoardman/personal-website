@@ -10,7 +10,6 @@ import { Heading, InlineCode, PhrasingContent, Text } from "mdast";
 import { visit } from "unist-util-visit";
 import GithubSlugger from "github-slugger";
 
-
 import type { Post, PostType, FrontMatter } from "@/types";
 
 const contentPath = path.join(process.cwd(), "content");
@@ -19,14 +18,22 @@ export function getAllPosts<T extends FrontMatter = FrontMatter>(type: PostType)
 
 	const directory = path.join(contentPath, type);
 
+	if (!fs.existsSync(directory)) return [];
+
 	const files: string[] = fs.readdirSync(directory).filter(file => file.endsWith(".md"));
 
-	return files.map(file => {
-		const slug = file.replace(/\.md/g, "");
-		const rawData = fs.readFileSync(path.join(directory, file), "utf-8");
-		const { data, content } = matter(rawData);
-		return { slug, data: data as T, content };
-	});
+	return files
+		.map(file => {
+			const slug = file.replace(/\.md/g, "");
+			const rawData = fs.readFileSync(path.join(directory, file), "utf-8");
+			const { data, content } = matter(rawData);
+			return { slug, data: data as T, content };
+		})
+		.filter(isRenderablePost);
+}
+
+function isRenderablePost<T extends FrontMatter>(post: Post<T>): boolean {
+	return Boolean(post.data?.name) && Boolean(post.content?.trim());
 }
 
 export function getPost<T extends FrontMatter = FrontMatter>(type: PostType, slug: string): Post<T> {

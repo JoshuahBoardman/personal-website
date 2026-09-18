@@ -34,8 +34,6 @@ function filterArticles(posts: Post<ArticleFrontMatter>[], filters: string[] = [
 
 export default async function Articles({ searchParams }: { searchParams: Promise<{ [key: string]: string | boolean | undefined }> }) {
 
-	//TODO: I feel like this should supply some time of specifieid tag state to the the child components
-
 	const filters = Object.keys(await searchParams);
 
 	const articles = getAllPosts<ArticleFrontMatter>(PostType.Article);
@@ -47,10 +45,15 @@ export default async function Articles({ searchParams }: { searchParams: Promise
 			<h1 className="text-[30px] leading-[1.2]">Writing</h1>
 			<RadioFilter searchParams={filters} totalItems={articles.length} filteredItems={filteredArticles.length} />
 
-			{ /*TODO: Update this to have default displays if a property is missing*/}
 			<div className="flex flex-col gap-3">
-				{filteredArticles.map(article =>
-					<ArticleCard key={article.slug} article={article} />
+				{filteredArticles.length === 0 ? (
+					<p className="text-base text-text2">
+						{articles.length === 0 ? "Nothing published yet." : "No articles match this filter."}
+					</p>
+				) : (
+					filteredArticles.map(article =>
+						<ArticleCard key={article.slug} article={article} />
+					)
 				)}
 			</div>
 

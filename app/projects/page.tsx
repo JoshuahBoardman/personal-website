@@ -25,13 +25,15 @@ export default function Projects() {
 				<span className="text-[11px] tracking-widest uppercase text-text2 font-mono">Things I keep coming back to</span>
 			</div>
 
-			{ /*TODO: Update this to have default displays if a property is missing*/}
-			<div className="grid grid-cols-2 gap-3.5 max-[860px]:grid-cols-1">
-
-				{projects.map(project =>
-					<ProjectCard key={project.data.name} project={project} />
-				)}
-			</div>
+			{projects.length === 0 ? (
+				<p className="text-base text-text2">Nothing published yet.</p>
+			) : (
+				<div className="grid grid-cols-2 gap-3.5 max-[860px]:grid-cols-1">
+					{projects.map(project =>
+						<ProjectCard key={project.data.name} project={project} />
+					)}
+				</div>
+			)}
 
 
 		</div>

@@ -34,21 +34,33 @@ export default function Home() {
 			</div>
 			<div className="grid grid-cols-4 gap-3.5 max-[860px]:grid-cols-1">
 
-				<Link href={`/articles/${articles[0].slug}`} className="col-span-2 row-span-2 min-w-0 max-[860px]:col-span-1 max-[860px]:row-span-1">
-					<article className="flex flex-col justify-between gap-7 rounded-2xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-7.5 cursor-pointer transition-[background,transform,box-shadow] duration-200 ease w-full h-full hover:bg-surface2 hover:-translate-y-0.75 hover:shadow-[inset_0_0_0_1px_var(--line),0_18px_36px_-26px_rgba(0,0,0,.5)]">
+				{articles[0] ? (
+					<Link href={`/articles/${articles[0].slug}`} className="col-span-2 row-span-2 min-w-0 max-[860px]:col-span-1 max-[860px]:row-span-1">
+						<article className="flex flex-col justify-between gap-7 rounded-2xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-7.5 cursor-pointer transition-[background,transform,box-shadow] duration-200 ease w-full h-full hover:bg-surface2 hover:-translate-y-0.75 hover:shadow-[inset_0_0_0_1px_var(--line),0_18px_36px_-26px_rgba(0,0,0,.5)]">
+							<div className="flex items-center gap-2.5 text-[11px] tracking-widest uppercase text-text2 font-mono">
+								<span className="w-1.75 h-1.75 rounded-xs bg-rust"></span> Latest
+							</div>
+							<div className="flex flex-col gap-4">
+								<h2 className="text-[40px] leading-[1.08] max-[640px]:text-[29px] max-[640px]:leading-[1.12]">{articles[0].data.name}</h2>
+								<p className="text-[17px] leading-[1.65] max-w-[46ch] text-text2 max-[640px]:text-[16px]">{articles[0].data.description}</p>
+								<div className="flex items-center gap-2.5 flex-wrap text-[11px] tracking-[0.06em] uppercase font-mono">
+									<Tags<ArticleFrontMatter> postType={PostType.Article} post={articles[0]} />
+									<span className="text-text2">{articles[0].data.date}</span>
+								</div>
+							</div>
+						</article>
+					</Link>
+				) : (
+					<div className="col-span-2 row-span-2 min-w-0 max-[860px]:col-span-1 max-[860px]:row-span-1 flex flex-col justify-between gap-7 rounded-2xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-7.5 w-full h-full">
 						<div className="flex items-center gap-2.5 text-[11px] tracking-widest uppercase text-text2 font-mono">
-							<span className="w-1.75 h-1.75 rounded-xs bg-rust"></span> Latest
+							<span className="w-1.75 h-1.75 rounded-xs bg-rust opacity-50"></span> Latest
 						</div>
 						<div className="flex flex-col gap-4">
-							<h2 className="text-[40px] leading-[1.08] max-[640px]:text-[29px] max-[640px]:leading-[1.12]">{articles[0].data.name}</h2>
-							<p className="text-[17px] leading-[1.65] max-w-[46ch] text-text2 max-[640px]:text-[16px]">{articles[0].data.description}</p>
-							<div className="flex items-center gap-2.5 flex-wrap text-[11px] tracking-[0.06em] uppercase font-mono">
-								<Tags<ArticleFrontMatter> postType={PostType.Article} post={articles[0]} />
-								<span className="text-text2">{articles[0].data.date}</span>
-							</div>
+							<h2 className="text-[40px] leading-[1.08] max-[640px]:text-[29px] max-[640px]:leading-[1.12] text-text2">Nothing published yet</h2>
+							<p className="text-[17px] leading-[1.65] max-w-[46ch] text-text2 max-[640px]:text-[16px]">Check back soon.</p>
 						</div>
-					</article>
-				</Link>
+					</div>
+				)}
 
 				<SmallHomeArticleCard article={articles[1]} />
 
@@ -78,18 +90,28 @@ export default function Home() {
 
 				</section>
 
-				<Link href={`/projects/${activeProjects[0].slug}`} className="col-span-2 min-w-0 max-[860px]:col-span-1 max-[860px]:row-span-1">
-					<article className="rounded-2xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-5.5 flex flex-col gap-4 cursor-pointer transition-[background,transform] duration-200 ease w-full h-full hover:bg-surface2 hover:-translate-y-0.75">
+				{activeProjects[0] ? (
+					<Link href={`/projects/${activeProjects[0].slug}`} className="col-span-2 min-w-0 max-[860px]:col-span-1 max-[860px]:row-span-1">
+						<article className="rounded-2xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-5.5 flex flex-col gap-4 cursor-pointer transition-[background,transform] duration-200 ease w-full h-full hover:bg-surface2 hover:-translate-y-0.75">
+							<div className="flex items-center gap-2.5 text-[11px] tracking-widest uppercase text-text2 font-mono">
+								<span className="w-1.75 h-1.75 rounded-xs bg-olive"></span> Active Project
+							</div>
+							<h3 className="text-[26px] leading-[1.15]">{activeProjects[0].data.name}</h3>
+							<p className="text-[16px] leading-[1.6] text-text2">{activeProjects[0].data.description}</p>
+							<div className="flex gap-2 flex-wrap text-[11px] tracking-[.06em] uppercase text-text2 font-mono">
+								<Tags<ProjectFrontMatter> postType={PostType.Project} post={activeProjects[0]} />
+							</div>
+						</article>
+					</Link>
+				) : (
+					<div className="col-span-2 min-w-0 max-[860px]:col-span-1 max-[860px]:row-span-1 rounded-2xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-5.5 flex flex-col gap-4 w-full h-full">
 						<div className="flex items-center gap-2.5 text-[11px] tracking-widest uppercase text-text2 font-mono">
-							<span className="w-1.75 h-1.75 rounded-xs bg-olive"></span> Active Project
+							<span className="w-1.75 h-1.75 rounded-xs bg-olive opacity-50"></span> Active Project
 						</div>
-						<h3 className="text-[26px] leading-[1.15]">{activeProjects[0].data.name}</h3>
-						<p className="text-[16px] leading-[1.6] text-text2">{activeProjects[0].data.description}</p>
-						<div className="flex gap-2 flex-wrap text-[11px] tracking-[.06em] uppercase text-text2 font-mono">
-							<Tags<ProjectFrontMatter> postType={PostType.Project} post={activeProjects[0]} />
-						</div>
-					</article>
-				</Link>
+						<h3 className="text-[26px] leading-[1.15] text-text2">No active projects right now</h3>
+						<p className="text-[16px] leading-[1.6] text-text2">Check back soon.</p>
+					</div>
+				)}
 
 				<SmallHomeArticleCard article={articles[3]} />
 
@@ -97,7 +119,7 @@ export default function Home() {
 				<Link href="/articles" className="min-w-0">
 					<button className="cursor-pointer text-left border-none rounded-xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-5.5 min-h-47.5 flex flex-col justify-between gap-4 text-[12px] tracking-[.08em] uppercase transition-[background,transform,color] duration-200 ease text-text2 font-mono w-full h-full hover:bg-rust hover:text-on-accent hover:-translate-y-0.75">
 						<span className="">Icon</span>
-						<span className="text-[15px] tracking-[0.06em]">All Writting<br></br> <span className="opacity-[0.7] text-[11px]">8 Pieces</span></span>
+						<span className="text-[15px] tracking-[0.06em]">All Writting<br></br> <span className="opacity-[0.7] text-[11px]">{articles.length} Pieces</span></span>
 					</button>
 				</Link>
 			</div >

@@ -1,3 +1,5 @@
+import AboutContact from "@/components/AboutContact";
+import AboutPrinciple from "@/components/AboutPrinciple";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -9,6 +11,22 @@ export const metadata: Metadata = {
 		type: "profile",
 	},
 };
+
+//TODO: FIll out the principles and contact methods arrays
+const principles = [
+	"Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.",
+	"Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
+	"Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+	"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.",
+	"Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium."
+];
+
+const contactMethods = [
+	{ name: "Email", address: "lorem.ipsum@example.com", url: "" },
+	{ name: "GitHub", address: "@lorem-ipsum", url: "https://github.com/JoshuahBoardman" },
+	{ name: "RSS", address: "/lorem.xml", url: "" },
+	{ name: "Elsewhere", address: "@lorem-ipsum", url: "" }
+];
 
 export default function About() {
 	return (
@@ -24,55 +42,23 @@ export default function About() {
 				</div>
 			</section>
 
-			{/* TODO: Populate from a principles list — currently a fixed-length loop of 5 in the source design */}
 			<section className="flex flex-col gap-4">
 				<span className="text-[11px] tracking-[.14em] uppercase text-text2 font-mono">Principles</span>
 				<div className="flex flex-col gap-0.5">
-					<div className="grid grid-cols-[44px_1fr] gap-4 items-baseline py-4.5 px-5 rounded-xl mb-2 bg-surface shadow-[inset_0_0_0_1px_var(--line)]">
-						<span className="text-xs tracking-[.06em] text-rust font-mono">01</span>
-						<p className="text-[19px] leading-leading-normal font-serif">Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.</p>
-					</div>
-					<div className="grid grid-cols-[44px_1fr] gap-4 items-baseline py-4.5 px-5 rounded-xl mb-2 bg-surface shadow-[inset_0_0_0_1px_var(--line)]">
-						<span className="text-xs tracking-[.06em] text-rust font-mono">02</span>
-						<p className="text-[19px] leading-leading-normal font-serif">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-					</div>
-					<div className="grid grid-cols-[44px_1fr] gap-4 items-baseline py-4.5 px-5 rounded-xl mb-2 bg-surface shadow-[inset_0_0_0_1px_var(--line)]">
-						<span className="text-xs tracking-[.06em] text-rust font-mono">03</span>
-						<p className="text-[19px] leading-leading-normal font-serif">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>
-					</div>
-					<div className="grid grid-cols-[44px_1fr] gap-4 items-baseline py-4.5 px-5 rounded-xl mb-2 bg-surface shadow-[inset_0_0_0_1px_var(--line)]">
-						<span className="text-xs tracking-[.06em] text-rust font-mono">04</span>
-						<p className="text-[19px] leading-leading-normal font-serif">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-					</div>
-					<div className="grid grid-cols-[44px_1fr] gap-4 items-baseline py-4.5 px-5 rounded-xl mb-2 bg-surface shadow-[inset_0_0_0_1px_var(--line)]">
-						<span className="text-xs tracking-[.06em] text-rust font-mono">05</span>
-						<p className="text-[19px] leading-leading-normal font-serif">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.</p>
-					</div>
+					{principles.map((principle, index) =>
+						<AboutPrinciple key={`principle-${index}}`} index={index + 1} principle={principle} />
+					)}
 				</div>
-			</section>
+			</section >
 
-			{/* TODO: Populate contact values from real handles/links; hrefs intentionally omitted for now */}
-			<section className="flex flex-col gap-4">
+			< section className="flex flex-col gap-4" >
 				<span className="text-[11px] tracking-[.14em] uppercase text-text2 font-mono">Contact</span>
 				<div className="grid gap-3 font-mono" style={{ gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))" }}>
-					<div className="rounded-xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] py-4.5 px-5 flex flex-col gap-1.5">
-						<span className="text-[10px] tracking-[.14em] uppercase text-text2">Email</span>
-						<span className="text-sm text-rust">lorem.ipsum@example.com</span>
-					</div>
-					<div className="rounded-xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] py-4.5 px-5 flex flex-col gap-1.5">
-						<span className="text-[10px] tracking-[.14em] uppercase text-text2">GitHub</span>
-						<span className="text-sm text-rust">@lorem-ipsum</span>
-					</div>
-					<div className="rounded-xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] py-4.5 px-5 flex flex-col gap-1.5">
-						<span className="text-[10px] tracking-[.14em] uppercase text-text2">RSS</span>
-						<span className="text-sm text-rust">/lorem.xml</span>
-					</div>
-					<div className="rounded-xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] py-4.5 px-5 flex flex-col gap-1.5">
-						<span className="text-[10px] tracking-[.14em] uppercase text-text2">Elsewhere</span>
-						<span className="text-sm text-rust">@lorem-ipsum</span>
-					</div>
+					{contactMethods.map(method =>
+						<AboutContact key={`contact-method-${method.name}`} name={method.name} address={method.address} url={method.url} />
+					)}
 				</div>
-			</section>
-		</div>
+			</section >
+		</div >
 	);
 }

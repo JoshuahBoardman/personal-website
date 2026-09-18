@@ -22,13 +22,18 @@ type FilterAction = { type: "toggle-tag", tag: string }
 	| { type: "toggle-sort" }
 	| { type: "toggle-sound" }
 
+/*Tag {
+ name: string,
+style: string,
+soundFreq: number,
+}*/
+
 
 const tags = ["software", "music", "tea", "literature"] as const;
 type Tag = (typeof tags)[number];
 
 const FREQS: Record<Tag, number> = { software: 196, music: 261.63, tea: 329.63, literature: 392 };
 
-//TODO: Might want to make this usable for any pare that lists content types
 export default function RadioFilter({ searchParams, totalItems, filteredItems }: { searchParams?: SearchParam, totalItems: number, filteredItems: number }) {
 
 	const router = useRouter();
@@ -69,7 +74,6 @@ export default function RadioFilter({ searchParams, totalItems, filteredItems }:
 
 				break;
 			case "sync":
-				console.log(action.params);
 				newState.sort = action.params.includes("oldest") ? "oldest" : "newest";
 
 				newState.tags = action.params ? action.params.filter(tag => tags.includes(tag as Tag)) : [];

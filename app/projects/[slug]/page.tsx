@@ -63,7 +63,6 @@ export default async function Page(
 					<span className="opacity-40">/</span><span>{project.data.date}</span>
 					<span className="opacity-40">/</span><span>{project.data.type}</span>
 				</div>
-				{/* TODO: Update these to link to specified links in the frontmatter */}
 				<div className="flex gap-3 flex-wrap max-[640px]:flex-col max-[640px]:items-stretch">
 					<span className="rounded-[10px] bg-rust text-on-accent py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[transform,filter] duration-150 hover:-translate-y-0.5 hover:brightness-[1.08] max-[640px]:text-center">
 						<Link href={project.data.repoLink} target="_blank" rel="noopener noreferrer">View repository →</Link>

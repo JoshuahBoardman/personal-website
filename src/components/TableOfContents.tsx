@@ -1,6 +1,11 @@
+type TocHeader = {
+	title: string,
+	slug: string,
+	depth: number
+}
 
-//TODO: Make a type for headers input
-export default function TableOfContents({ headers }: { headers: { title: string, slug: string, depth: number }[] }) {
+
+export default function TableOfContents({ headers }: { headers: TocHeader[] }) {
 
 	return (
 		< aside className="rounded-3.5 bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-5.5 flex flex-col gap-3.5 sticky top-6 font-mono rounded-[14px] min-w-0 max-[860px]:static max-[860px]:order-first" >
@@ -13,8 +18,5 @@ export default function TableOfContents({ headers }: { headers: { title: string,
 				)}
 			</div>
 		</aside >
-
-
 	)
-	//
 }

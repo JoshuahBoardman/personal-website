@@ -1,3 +1,4 @@
+import RadioWaveBar from "@/components/RadioWaveBar";
 import type { Metadata } from "next";
 import Link from "next/link";
 
@@ -7,6 +8,8 @@ export const metadata: Metadata = {
 };
 
 export default function NotFound() {
+	const volume = 3;
+
 	return (
 		<div className="flex flex-col items-center gap-10 py-24 text-center fade-up">
 			<div className="w-full max-w-sm rounded-2xl bg-screen shadow-[inset_0_0_0_1px_rgba(163,181,121,.18)] p-8 flex flex-col items-center gap-6 font-mono">
@@ -14,17 +17,7 @@ export default function NotFound() {
 					<span>Channel</span><span>404</span>
 				</div>
 				<span className="text-[15px] tracking-[.08em] uppercase text-screen-text">No signal</span>
-				{/* TODO: Use wavebar component */}
-				<div className="flex gap-1.5 items-end h-8">
-					<span className="wave-bar w-1.25 rounded-xs bg-screen-text opacity-65 h-3"></span>
-					<span className="wave-bar w-1.25 rounded-xs bg-screen-text opacity-65 h-5"></span>
-					<span className="wave-bar w-1.25 rounded-xs bg-screen-text opacity-65 h-2"></span>
-					<span className="wave-bar w-1.25 rounded-xs bg-screen-text opacity-65 h-6"></span>
-					<span className="wave-bar w-1.25 rounded-xs bg-screen-text opacity-65 h-3.5"></span>
-					<span className="wave-bar w-1.25 rounded-xs bg-screen-text opacity-65 h-5"></span>
-					<span className="wave-bar w-1.25 rounded-xs bg-screen-text opacity-65 h-2.5"></span>
-					<span className="wave-bar w-1.25 rounded-xs bg-screen-text opacity-65 h-4"></span>
-				</div>
+				<RadioWaveBar volume={volume} />
 			</div>
 
 			<div className="flex flex-col items-center gap-4 max-w-md">

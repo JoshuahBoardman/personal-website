@@ -32,10 +32,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 	};
 }
 
-// TODO: once there's a real content source (CMS/MDX), this becomes
-// `export default async function Page({ params }: PageProps<"/Articles/[slug]">)`
-// and looks the article up by `(await params).slug`. Left static for now —
-// no data layer to look up against yet.
 export default async function Page(
 	{
 		params

@@ -118,7 +118,12 @@ export default function Home() {
 
 				<Link href="/articles" className="min-w-0">
 					<button className="cursor-pointer text-left border-none rounded-xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-5.5 min-h-47.5 flex flex-col justify-between gap-4 text-[12px] tracking-[.08em] uppercase transition-[background,transform,color] duration-200 ease text-text2 font-mono w-full h-full hover:bg-rust hover:text-on-accent hover:-translate-y-0.75">
-						<span className="">Icon</span>
+						<span className="grid grid-cols-[repeat(2,8px)] gap-0.75">
+							<span className="w-2 h-2 rounded-xs bg-current opacity-[.85]"></span>
+							<span className="w-2 h-2 rounded-xs bg-current opacity-[.5]"></span>
+							<span className="w-2 h-2 rounded-xs bg-current opacity-[.5]"></span>
+							<span className="w-2 h-2 rounded-xs bg-current opacity-[.85]"></span>
+						</span>
 						<span className="text-[15px] tracking-[0.06em]">All Writting<br></br> <span className="opacity-[0.7] text-[11px]">{articles.length} Pieces</span></span>
 					</button>
 				</Link>

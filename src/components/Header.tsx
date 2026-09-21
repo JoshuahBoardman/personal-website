@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import ThemeToggle from './ThemeToggle';
+import Logo from './Logo';
 import { usePathname } from 'next/navigation'
 
 export default function Header() {
@@ -19,12 +20,7 @@ export default function Header() {
 		<header className="w-full max-w-270 my-0 mx-auto flex items-center justify-between gap-6 pt-6.5 px-0 pb-10 flex-wrap max-[640px]:flex-col max-[640px]:items-start max-[640px]:gap-4 max-[640px]:pb-7">
 			<Link href="/">
 				<div className="flex items-center gap-3 cursor-pointer">
-					<div className="grid grid-cols-2 gap-0.75 p-1.25 rounded-md bg-surface shadow-[inset_0_0_0_1px_var(--line)]">
-						<span className="w-2.5 h-2.5 rounded-xs bg-rust"></span>
-						<span className="w-2.5 h-2.5 rounded-xs bg-olive"></span>
-						<span className="w-2.5 h-2.5 rounded-xs bg-text2 opacity-50"></span>
-						<span className="w-2.5 h-2.5 rounded-xs bg-gold"></span>
-					</div>
+					<Logo />
 					<span className="text-[13px] tracking-tight font-mono">JoshuahBoardman<span className="text-text2">.com</span></span>
 				</div>
 			</Link>

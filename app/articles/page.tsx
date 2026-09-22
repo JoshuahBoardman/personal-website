@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { PostType, ArticleFrontMatter, Post } from "@/types";
 import { getAllPosts } from "@/lib/content";
 import RadioFilter from "@/components/RadioFilter";
@@ -42,7 +43,14 @@ export default async function Articles({ searchParams }: { searchParams: Promise
 	return (
 
 		<div className="flex flex-col gap-6.5 fade-up">
-			<h1 className="text-[30px] leading-[1.2]">Writing</h1>
+			<div className="flex items-center justify-between gap-4 flex-wrap">
+				<h1 className="text-[30px] leading-[1.2]">Writing</h1>
+				<Link href="/feed" className="flex items-center gap-2.5 pt-1.75 pr-3.5 pb-1.75 pl-2.75 rounded-full bg-surface shadow-[inset_0_0_0_1px_var(--line)] font-mono text-[11px] tracking-[.08em] uppercase text-text transition-[background,transform] duration-200 hover:bg-surface2 hover:-translate-y-0.25">
+					<span className="w-1.75 h-1.75 rounded-full bg-rust shadow-[0_0_8px_color-mix(in_oklab,var(--rust)_70%,transparent)]"></span>
+					<span>Subscribe</span>
+					<span className="text-text2">/feed</span>
+				</Link>
+			</div>
 			<RadioFilter searchParams={filters} totalItems={articles.length} filteredItems={filteredArticles.length} />
 
 			<div className="flex flex-col gap-3">

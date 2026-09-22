@@ -24,6 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://joshuahboardman.com"),
 	title: "JoshuahBoardman.com",
 	description: "Joshuah's cozy corner of the internet.",
 	openGraph: {

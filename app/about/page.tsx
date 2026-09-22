@@ -1,6 +1,8 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+
 import AboutContact from "@/components/AboutContact";
 import AboutPrinciple from "@/components/AboutPrinciple";
-import type { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title: "About",
@@ -32,8 +34,14 @@ export default function About() {
 	return (
 		<div className=" w-full flex flex-col gap-14 max-w-205 fade-up">
 			<section className="grid grid-cols-[300px_1fr] gap-8.5 items-start max-[860px]:grid-cols-1">
-				<div className="aspect-4/5 rounded-2xl flex items-end p-3.5 shadow-[inset_0_0_0_1px_var(--line)] bg-[repeating-linear-gradient(135deg,var(--surface),var(--surface)_9px,var(--surface2)_9px,var(--surface2)_18px)]">
-					<span className="text-[10px] tracking-[.12em] uppercase py-1.25 px-2 rounded-md bg-bg text-text2 font-mono">portrait — 4:5</span>
+				<div className="aspect-4/5 relative overflow-hidden rounded-2xl shadow-[inset_0_0_0_1px_var(--line)] bg-surface">
+					<Image
+						src="/portrait.png"
+						alt="Joshuah Boardman"
+						fill
+						className="object-cover object-[50%_38%] scale-[1.06]"
+					/>
+					<span className="absolute inset-0 rounded-2xl shadow-[inset_0_0_0_1px_var(--line),inset_0_-40px_60px_-40px_rgba(28,23,18,.35)] pointer-events-none"></span>
 				</div>
 				<div className="flex flex-col gap-4.5 pt-1">
 					<h1 className="text-[38px] leading-[1.1]">Joshuah Boardman</h1>

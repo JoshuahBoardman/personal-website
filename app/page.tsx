@@ -36,7 +36,7 @@ export default function Home() {
 
 				{articles[0] ? (
 					<Link href={`/articles/${articles[0].slug}`} className="col-span-2 row-span-2 min-w-0 max-[860px]:col-span-1 max-[860px]:row-span-1">
-						<article className="flex flex-col justify-between gap-7 rounded-2xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-7.5 cursor-pointer transition-[background,transform,box-shadow] duration-200 ease w-full h-full hover:bg-surface2 hover:-translate-y-0.75 hover:shadow-[inset_0_0_0_1px_var(--line),0_18px_36px_-26px_rgba(0,0,0,.5)]">
+						<article className="flex flex-col justify-between gap-7 rounded-2xl bg-surface shadow-line hover-shadow-line-lift p-7.5 cursor-pointer transition-[background,transform,box-shadow] duration-200 ease w-full h-full hover:bg-surface2 hover:-translate-y-0.75">
 							<div className="flex items-center gap-2.5 text-[11px] tracking-widest uppercase text-text2 font-mono">
 								<span className="w-1.75 h-1.75 rounded-xs bg-rust"></span> Latest
 							</div>
@@ -51,7 +51,7 @@ export default function Home() {
 						</article>
 					</Link>
 				) : (
-					<div className="col-span-2 row-span-2 min-w-0 max-[860px]:col-span-1 max-[860px]:row-span-1 flex flex-col justify-between gap-7 rounded-2xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-7.5 w-full h-full">
+					<div className="col-span-2 row-span-2 min-w-0 max-[860px]:col-span-1 max-[860px]:row-span-1 flex flex-col justify-between gap-7 rounded-2xl bg-surface shadow-line p-7.5 w-full h-full">
 						<div className="flex items-center gap-2.5 text-[11px] tracking-widest uppercase text-text2 font-mono">
 							<span className="w-1.75 h-1.75 rounded-xs bg-rust opacity-50"></span> Latest
 						</div>
@@ -68,31 +68,31 @@ export default function Home() {
 
 				{/* This is for stats that I would like to keep people up to date with */}
 				<section className="col-span-2 min-w-0 max-[860px]:col-span-1 max-[860px]:row-span-1 rounded-2xl py-5.5 px-6 bg-screen shadow-[inset_0_0_0_1px_rgba(163,181,121,.18)] flex flex-col gap-3.5 font-mono">
-					<div className="flex items-center justify-between text-[11px] tracking-[.14em] uppercase text-screen-text opacity-55">
+					<div className="flex items-center justify-between text-[11px] tracking-[.14em] uppercase text-screen-text opacity-70">
 						<span>Currently</span> < Clock />
 					</div>
 					<div className="flex gap-3.5 items-baseline text-[13px] leading-normal text-screen-text">
-						<span className="min-w-21.5 opacity-55 tracking-[.08em] uppercase text-[11px]">Reading</span> <span>Entangled Life - Merlin Sheldrake</span>
+						<span className="min-w-21.5 opacity-70 tracking-[.08em] uppercase text-[11px]">Reading</span> <span>Entangled Life - Merlin Sheldrake</span>
 					</div>
 					<div className="flex gap-3.5 items-baseline text-[13px] leading-normal text-screen-text">
-						<span className="min-w-21.5 opacity-55 tracking-[.08em] uppercase text-[11px]">Learning</span> <span>Entangled Life - Merlin Sheldrake</span>
+						<span className="min-w-21.5 opacity-70 tracking-[.08em] uppercase text-[11px]">Learning</span> <span>Entangled Life - Merlin Sheldrake</span>
 					</div>
 
 					{ /*<div className="flex gap-3.5 items-baseline text-[13px] leading-normal text-screen-text">
-						<span className="min-w-21.5 opacity-55 tracking-[.08em] uppercase text-[11px]">Practicing</span> <span>Portrait of Tracy — harmonics, slowly</span>
+						<span className="min-w-21.5 opacity-70 tracking-[.08em] uppercase text-[11px]">Practicing</span> <span>Portrait of Tracy — harmonics, slowly</span>
 					</div> */ }
 					<div className="flex gap-3.5 items-baseline text-[13px] leading-normal text-screen-text">
-						<span className="min-w-21.5 opacity-55 tracking-[.08em] uppercase text-[11px]">Building</span> <span>Fat Lotto - Weighted Lottery Group Decision Bot</span>
+						<span className="min-w-21.5 opacity-70 tracking-[.08em] uppercase text-[11px]">Building</span> <span>Fat Lotto - Weighted Lottery Group Decision Bot</span>
 					</div>
 					<div className="flex gap-3.5 items-baseline text-[13px] leading-normal text-screen-text">
-						<span className="min-w-21.5 opacity-55 tracking-[.08em] uppercase text-[11px]">Steeping</span> <span>2019 Bulang sheng, 6g gaiwan</span>
+						<span className="min-w-21.5 opacity-70 tracking-[.08em] uppercase text-[11px]">Steeping</span> <span>2019 Bulang sheng, 6g gaiwan</span>
 					</div>
 
 				</section>
 
 				{activeProjects[0] ? (
 					<Link href={`/projects/${activeProjects[0].slug}`} className="col-span-2 min-w-0 max-[860px]:col-span-1 max-[860px]:row-span-1">
-						<article className="rounded-2xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-5.5 flex flex-col gap-4 cursor-pointer transition-[background,transform] duration-200 ease w-full h-full hover:bg-surface2 hover:-translate-y-0.75">
+						<article className="rounded-2xl bg-surface shadow-line p-5.5 flex flex-col gap-4 cursor-pointer transition-[background,transform] duration-200 ease w-full h-full hover:bg-surface2 hover:-translate-y-0.75">
 							<div className="flex items-center gap-2.5 text-[11px] tracking-widest uppercase text-text2 font-mono">
 								<span className="w-1.75 h-1.75 rounded-xs bg-olive"></span> Active Project
 							</div>
@@ -104,7 +104,7 @@ export default function Home() {
 						</article>
 					</Link>
 				) : (
-					<div className="col-span-2 min-w-0 max-[860px]:col-span-1 max-[860px]:row-span-1 rounded-2xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-5.5 flex flex-col gap-4 w-full h-full">
+					<div className="col-span-2 min-w-0 max-[860px]:col-span-1 max-[860px]:row-span-1 rounded-2xl bg-surface shadow-line p-5.5 flex flex-col gap-4 w-full h-full">
 						<div className="flex items-center gap-2.5 text-[11px] tracking-widest uppercase text-text2 font-mono">
 							<span className="w-1.75 h-1.75 rounded-xs bg-olive opacity-50"></span> Active Project
 						</div>
@@ -117,14 +117,14 @@ export default function Home() {
 
 
 				<Link href="/articles" className="min-w-0">
-					<button className="cursor-pointer text-left border-none rounded-xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-5.5 min-h-47.5 flex flex-col justify-between gap-4 text-[12px] tracking-[.08em] uppercase transition-[background,transform,color] duration-200 ease text-text2 font-mono w-full h-full hover:bg-rust hover:text-on-accent hover:-translate-y-0.75">
+					<button className="cursor-pointer text-left border-none rounded-xl bg-surface shadow-line p-5.5 min-h-47.5 flex flex-col justify-between gap-4 text-[12px] tracking-[.08em] uppercase transition-[background,transform,color] duration-200 ease text-text2 font-mono w-full h-full hover:bg-rust hover:text-on-accent hover:-translate-y-0.75">
 						<span className="grid grid-cols-[repeat(2,8px)] gap-0.75">
 							<span className="w-2 h-2 rounded-xs bg-current opacity-[.85]"></span>
 							<span className="w-2 h-2 rounded-xs bg-current opacity-[.5]"></span>
 							<span className="w-2 h-2 rounded-xs bg-current opacity-[.5]"></span>
 							<span className="w-2 h-2 rounded-xs bg-current opacity-[.85]"></span>
 						</span>
-						<span className="text-[15px] tracking-[0.06em]">All Writting<br></br> <span className="opacity-[0.7] text-[11px]">{articles.length} Pieces</span></span>
+						<span className="text-[15px] tracking-[0.06em]">All Writting<br></br> <span className="opacity-[0.85] text-[11px]">{articles.length} Pieces</span></span>
 					</button>
 				</Link>
 			</div >

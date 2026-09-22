@@ -1,8 +1,5 @@
 @import "tailwindcss";
 
-/* Palette lifted from the Claude Design mockup (joshuahboardman.dc.html).
-   Swap these values for whatever you land on — the @theme block below is
-   what turns them into bg-rust / text-text2 / border-line utility classes. */
 :root {
   --bg: #EDE6D6;
   --surface: #F5F0E4;
@@ -20,11 +17,11 @@
   --on-accent: #FFF7EA;
   --on-accent-dark: #1C1712;
   --mark-body: #2B2118;
+  --tag-rust: #B74C2C;
+  --tag-olive: #63703E;
+  --tag-gold: #85631D;
 }
 
-/* Matches the original design's mechanism: an explicit data-theme attribute
-   on <html>, flipped by a theme-toggle button — not prefers-color-scheme.
-   Until that toggle exists, this block simply never applies. */
 [data-theme="dark"] {
   --bg: #1C1712;
   --surface: #26201A;
@@ -42,6 +39,9 @@
   --on-accent: #FFF7EA;
   --on-accent-dark: #1C1712;
   --mark-body: #100C08;
+  --tag-rust: var(--rust);
+  --tag-olive: var(--olive);
+  --tag-gold: var(--gold);
 }
 
 @theme inline {
@@ -72,8 +72,15 @@
   box-shadow: inset 0 0 0 1px var(--line);
 }
 
-/* RadioFilter pad buttons (RadioButton.tsx) — lit/active state + hover/press
-   feedback, ported from the Claude Design mockup's [data-pad]/[data-pad-on]. */
+.shadow-line { box-shadow: inset 0 0 0 1px var(--line); }
+.hover-shadow-line-lift:hover { box-shadow: inset 0 0 0 1px var(--line), 0 18px 36px -26px rgba(0, 0, 0, .5); }
+.shadow-line-vignette { box-shadow: inset 0 0 0 1px var(--line), inset 0 -40px 60px -40px rgba(28, 23, 18, .35); }
+.glow-gold { box-shadow: 0 0 8px color-mix(in oklab, var(--gold) 70%, transparent); }
+.glow-rust { box-shadow: 0 0 8px color-mix(in oklab, var(--rust) 70%, transparent); }
+.text-tag-rust { color: var(--tag-rust); }
+.text-tag-olive { color: var(--tag-olive); }
+.text-tag-gold { color: var(--tag-gold); }
+
 [data-pad] {
   transition: transform .1s cubic-bezier(.2, .85, .3, 1), background .18s ease, box-shadow .18s ease, color .18s ease;
 }
@@ -106,7 +113,6 @@ h1, h2, h3 {
   font-weight: 600;
 }
 
-/* Page-entrance transition, applied to each route's root wrapper. */
 .fade-up {
   animation: fadeUp .4s cubic-bezier(.2, .7, .3, 1) both;
 }
@@ -116,12 +122,6 @@ h1, h2, h3 {
   to { opacity: 1; transform: none; }
 }
 
-/* Articles page "Filter bank" meter (RadioWaveBar.tsx) — continuous,
-   organic-looking pulse done entirely with transform, so it runs on the
-   compositor thread instead of a JS timer driving per-frame height writes.
-   Amplitude is keyed off the wrapper's data-volume (1-4, set from the
-   component's volume prop): meterPulse-1 is the shallowest, meterPulse-4
-   the deepest. */
 .wave-bar {
   transform-origin: center bottom;
   animation-name: meterPulse-4;
@@ -180,13 +180,6 @@ h1, h2, h3 {
 .wave-bar:nth-child(4n) { animation-delay: -.7s; animation-duration: 3.1s; }
 .wave-bar:nth-child(5n) { animation-delay: -1.6s; animation-duration: 2.5s; }
 
-/* Styles for raw markdown output (remark-html) rendered into an element
-   with class="content" — e.g. app/Articles/[slug]/page.tsx. p/h2/blockquote/
-   pre/ul values are ported directly from the source design's [data-prose]
-   block styles; h1/h3-h6/ol/inline-code/hr/table/img aren't part of the
-   source's typed-block system (it only ever emits p/h2/quote/code/list/img),
-   so those are extrapolated from the confirmed type scale and the site's
-   other established motifs (chip-style code, About page's numbered list). */
 .content h1 {
   font-size: 32px;
   line-height: 1.2;

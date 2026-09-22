@@ -17,7 +17,7 @@ export default function AboutContact({ name, address, url }: { name: string, add
 		}
 	}
 
-	const cardClassName = "rounded-xl bg-surface shadow-[inset_0_0_0_1px_var(--line)] py-4.5 px-5 flex flex-col gap-1.5 cursor-pointer transition-[background,transform] duration-200 ease hover:bg-surface2 hover:-translate-y-0.75";
+	const cardClassName = "rounded-xl bg-surface shadow-line py-4.5 px-5 flex flex-col gap-1.5 cursor-pointer transition-[background,transform] duration-200 ease hover:bg-surface2 hover:-translate-y-0.75";
 
 	const content = (
 		<>

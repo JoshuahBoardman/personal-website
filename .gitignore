@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# lighthouse reports (default output path/naming when --output-path isn't set)
+localhost_*.report.html
+localhost_*.report.json

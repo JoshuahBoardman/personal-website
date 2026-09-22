@@ -2,9 +2,9 @@ import { Post, FrontMatter, PostType } from "@/types";
 
 // NOTE: MAYBE: If I need to to start referencing the tag type in more than 2 components I should likely break out into its own type or into a config file.
 const TagStyles = {
-	software: "border-rust/40 text-rust",
-	music: "border-olive/40 text-olive",
-	tea: "border-gold/40 text-gold",
+	software: "border-rust/40 text-tag-rust",
+	music: "border-olive/40 text-tag-olive",
+	tea: "border-gold/40 text-tag-gold",
 	literature: "border-ink/40 text-ink"
 
 } as const;
@@ -22,7 +22,7 @@ function tagStyle(tag: string, postType: PostType): string {
 
 	let style = "text-[11px] tracking-[0.06em] uppercase font-mono ";
 
-	style += isArticle ? "rounded-[999px] border" : "rounded-md bg-bg shadow-[inset_0_0_0_1px_var(--line)] text-text2 "
+	style += isArticle ? "rounded-[999px] border" : "rounded-md bg-bg shadow-line text-text2 "
 
 	if (isArticle) {
 		style += ` ${isKnownTag(tag) ? TagStyles[tag] : "border-line text-text2"}`;

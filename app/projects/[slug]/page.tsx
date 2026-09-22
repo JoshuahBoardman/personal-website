@@ -68,7 +68,7 @@ export default async function Page(
 						<Link href={project.data.repoLink} target="_blank" rel="noopener noreferrer">View repository →</Link>
 					</span>
 					{project.data.articleLink &&
-						<span className="rounded-[10px] bg-surface shadow-[inset_0_0_0_1px_var(--line)] py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[background,transform] duration-150 hover:bg-surface2 hover:-translate-y-0.5 max-[640px]:text-center">
+						<span className="rounded-[10px] bg-surface shadow-line py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[background,transform] duration-150 hover:bg-surface2 hover:-translate-y-0.5 max-[640px]:text-center">
 							<Link href={project.data.articleLink} target="_blank" rel="noopener noreferrer">Related writing</Link>
 						</span>}
 				</div>
@@ -89,7 +89,7 @@ export default async function Page(
 					<Link href={project.data.repoLink} target="_blank" rel="noopener noreferrer">View repository →</Link>
 				</span>
 				{project.data.articleLink &&
-					<span className="rounded-[10px] bg-surface shadow-[inset_0_0_0_1px_var(--line)] py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[background,transform] duration-150 hover:bg-surface2 hover:-translate-y-0.5 max-[640px]:text-center">
+					<span className="rounded-[10px] bg-surface shadow-line py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[background,transform] duration-150 hover:bg-surface2 hover:-translate-y-0.5 max-[640px]:text-center">
 						<Link href={project.data.articleLink} target="_blank" rel="noopener noreferrer">Related writing</Link>
 					</span>}
 			</div>

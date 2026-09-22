@@ -10,7 +10,7 @@ export default function TableOfContents({ headers }: { headers: TocHeader[] }) {
 	if (headers.length === 0) return null;
 
 	return (
-		< aside className="rounded-3.5 bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-5.5 flex flex-col gap-3.5 sticky top-6 font-mono rounded-[14px] min-w-0 max-[860px]:static max-[860px]:order-first" >
+		< aside className="rounded-3.5 bg-surface shadow-line p-5.5 flex flex-col gap-3.5 sticky top-6 font-mono rounded-[14px] min-w-0 max-[860px]:static max-[860px]:order-first" >
 			<span className="text-[10px] tracking-[.16em] uppercase text-text2">Stack</span>
 			<div className="flex flex-col gap-2.25 text-[12.5px] leading-normal">
 				{headers.map(header =>

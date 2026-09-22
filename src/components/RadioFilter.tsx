@@ -126,7 +126,7 @@ export default function RadioFilter({ searchParams, totalItems, filteredItems }:
 	}, [state])
 
 	return (
-		<section className="grid grid-cols-[minmax(220px,1fr)_auto] gap-4.5 rounded-[18px] bg-surface shadow-[inset_0_0_0_1px_var(--line)] p-4.5 max-[860px]:grid-cols-1">
+		<section className="grid grid-cols-[minmax(220px,1fr)_auto] gap-4.5 rounded-[18px] bg-surface shadow-line p-4.5 max-[860px]:grid-cols-1">
 			<div className="rounded-xl p-4.5 flex flex-col justify-between gap-4.5 min-h-37.5 bg-screen shadow-[inset_0_0_0_1px_rgba(163,181,121,.18)] text-screen-text font-mono min-w-0">
 				<div className="flex items-center justify-between text-[10px] tracking-[.16em] uppercase opacity-55">
 					<span>Filter bank</span>

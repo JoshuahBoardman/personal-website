@@ -1,7 +1,22 @@
-<svg width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- Superseded by the flower-chip mark below, kept for reference:
   <rect x="0.5" y="0.5" width="35" height="35" rx="7" fill="#26201A" stroke="rgba(237,230,214,.14)"/>
   <rect x="24" y="5" width="7" height="16.5" rx="2.5" fill="#E06B45"/>
   <rect x="5" y="24" width="26" height="7" rx="2.5" fill="#E06B45"/>
   <rect x="5" y="5" width="16.5" height="7" rx="2.5" fill="#7C8C4D" opacity="0.35"/>
   <rect x="5" y="14.5" width="16.5" height="7" rx="2.5" fill="#7C8C4D" opacity="0.25"/>
+  -->
+  <g fill="#E06B45">
+    <rect x="27" y="1" width="10" height="17" rx="4"/>
+    <rect x="27" y="46" width="10" height="17" rx="4"/>
+    <rect x="1" y="27" width="17" height="10" rx="4"/>
+    <rect x="46" y="27" width="17" height="10" rx="4"/>
+    <rect x="27" y="1" width="10" height="17" rx="4" transform="rotate(45 32 32)"/>
+    <rect x="27" y="46" width="10" height="17" rx="4" transform="rotate(45 32 32)"/>
+    <rect x="1" y="27" width="17" height="10" rx="4" transform="rotate(45 32 32)"/>
+    <rect x="46" y="27" width="17" height="10" rx="4" transform="rotate(45 32 32)"/>
+  </g>
+  <rect x="15" y="15" width="34" height="34" rx="8" fill="#100C08"/>
+  <rect x="27" y="27" width="12" height="12" rx="3.5" fill="#A3B579"/>
+  <circle cx="20.5" cy="20.5" r="1.7" fill="#A3B579"/>
 </svg>

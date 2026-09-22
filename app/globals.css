@@ -19,6 +19,7 @@
   --screen-text: #A3B579;
   --on-accent: #FFF7EA;
   --on-accent-dark: #1C1712;
+  --mark-body: #2B2118;
 }
 
 /* Matches the original design's mechanism: an explicit data-theme attribute
@@ -40,6 +41,7 @@
   --screen-text: #A3B579;
   --on-accent: #FFF7EA;
   --on-accent-dark: #1C1712;
+  --mark-body: #100C08;
 }
 
 @theme inline {
@@ -58,6 +60,7 @@
   --color-screen-text: var(--screen-text);
   --color-on-accent: var(--on-accent);
   --color-on-accent-dark: var(--on-accent-dark);
+  --color-mark-body: var(--mark-body);
   --font-sans: var(--font-work-sans);
   --font-serif: var(--font-fraunces);
   --font-mono: var(--font-jetbrains-mono);

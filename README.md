@@ -65,7 +65,7 @@ on the next build. No admin panel, no database, just files.
 metadata) is done and deployed. Ongoing work is mostly writing: new articles
 and projects get added the same way any other content does.
 
-At some point I may add pagination and varioud other small additions.
+At some point I may add pagination and various other small additions.
 
 ## Write-up
 

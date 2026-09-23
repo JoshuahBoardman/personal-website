@@ -303,6 +303,18 @@ h1, h2, h3 {
   color: var(--rust);
 }
 
+.content ul > li {
+  padding-left: 30px;
+  position: relative;
+}
+
+.content ul > li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--rust);
+}
+
 .content li > ul,
 .content li > ol {
   margin-top: 10px;

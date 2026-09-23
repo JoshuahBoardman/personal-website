@@ -72,20 +72,16 @@ export default function Home() {
 						<span>Currently</span> < Clock />
 					</div>
 					<div className="flex gap-3.5 items-baseline text-[13px] leading-normal text-screen-text">
-						<span className="min-w-21.5 opacity-70 tracking-[.08em] uppercase text-[11px]">Reading</span> <span>Entangled Life - Merlin Sheldrake</span>
+						<span className="min-w-21.5 opacity-70 tracking-[.08em] uppercase text-[11px]">Reading</span> <span>The Managers Path - Camille Fournier</span>
 					</div>
 					<div className="flex gap-3.5 items-baseline text-[13px] leading-normal text-screen-text">
-						<span className="min-w-21.5 opacity-70 tracking-[.08em] uppercase text-[11px]">Learning</span> <span>Entangled Life - Merlin Sheldrake</span>
+						<span className="min-w-21.5 opacity-70 tracking-[.08em] uppercase text-[11px]">Learning</span> <span>Studying for CompTIA Security+</span>
 					</div>
-
-					{ /*<div className="flex gap-3.5 items-baseline text-[13px] leading-normal text-screen-text">
-						<span className="min-w-21.5 opacity-70 tracking-[.08em] uppercase text-[11px]">Practicing</span> <span>Portrait of Tracy — harmonics, slowly</span>
-					</div> */ }
 					<div className="flex gap-3.5 items-baseline text-[13px] leading-normal text-screen-text">
 						<span className="min-w-21.5 opacity-70 tracking-[.08em] uppercase text-[11px]">Building</span> <span>Fat Lotto - Weighted Lottery Group Decision Bot</span>
 					</div>
 					<div className="flex gap-3.5 items-baseline text-[13px] leading-normal text-screen-text">
-						<span className="min-w-21.5 opacity-70 tracking-[.08em] uppercase text-[11px]">Steeping</span> <span>2019 Bulang sheng, 6g gaiwan</span>
+						<span className="min-w-21.5 opacity-70 tracking-[.08em] uppercase text-[11px]">Steeping</span> <span>Piper & Leaf, Monk's Meditation, hot steep</span>
 					</div>
 
 				</section>
@@ -124,7 +120,7 @@ export default function Home() {
 							<span className="w-2 h-2 rounded-xs bg-current opacity-[.5]"></span>
 							<span className="w-2 h-2 rounded-xs bg-current opacity-[.85]"></span>
 						</span>
-						<span className="text-[15px] tracking-[0.06em]">All Writting<br></br> <span className="opacity-[0.85] text-[11px]">{articles.length} Pieces</span></span>
+						<span className="text-[15px] tracking-[0.06em]">All Writing<br></br> <span className="opacity-[0.85] text-[11px]">{articles.length} Pieces</span></span>
 					</button>
 				</Link>
 			</div >

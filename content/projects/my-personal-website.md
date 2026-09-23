@@ -1,8 +1,16 @@
-## My Personal Website
+---
+name: "My Personal Website"
+date: "2026-09-23"
+description: "The site you're reading right now! Next.js, Tailwind, and a content folder of plain MD files instead of a database or CMS."
+tags: ["website", "markdown", "NextJs", "Tailwind", "TypeScript"]
+status: "active"
+type: "Website"
+repoLink: "https://github.com/JoshuahBoardman/personal-website"
+articleLink: "https://joshuahboardman.com/articles/building-my-personal-site"
+---
+
 
 A simple warm bento inspired website written using Typescript, NextJs and Tailwind for displaying projects and publishing content about what I'm doing. 
-
-![My Personal Website homepage, dark mode](./page-screenshot.png)
 
 ## Features
 

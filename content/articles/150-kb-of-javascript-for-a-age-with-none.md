@@ -27,7 +27,9 @@ While building this project, I was surprised by how easily my past React knowled
 
 I really enjoyed how NextJS structures projects. The layout/page/component hierarchy fits very naturally with how I built React applications in the past and makes isolating client components a breeze. The ability to offload HTML generation to the server in such a simple way is a massive win for the React ecosystem.
 
-As I have matured development-wise, I have progressively come to believe that we should only ship to the client what is explicitly necessary for end-user functionality; everything else should reside on the server. I was upset to find that regardless of how things are configured, you will always ship the React runtime, which means your payload will always be much larger than it needs to be. On my About page, which has no interactive content of its own, the browser still downloads about 150 KB of JavaScript, and most of it is React. But I suppose if that is a problem, your application is likely not dynamic enough to justify React/NextJS, and you should use something different.
+As I have matured development-wise, I have progressively come to believe that we should only ship to the client what is explicitly necessary for end-user functionality; everything else should reside on the server. I was upset to find that regardless of how things are configured, you will always ship the React runtime, which means your payload will always be much larger than it needs to be. 
+
+On my About page, the only interactive element is a small copy-to-clipboard button, yet the browser still downloads about 150 KB of JavaScript, and most of it is React. But I suppose if that is a problem, your application is likely not dynamic enough to justify React/NextJS, and you should use something different.
 
 Regarding routing, I didn't take full advantage of the natural fit of grouping functionality by route segment. In my implementation, I primarily used a top-level src folder to contain all my components and scripts. In hindsight, I wish I had grouped files into their specific route segment folders, and I might change this in the future.
 

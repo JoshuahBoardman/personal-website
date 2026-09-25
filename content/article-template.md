@@ -1,8 +1,10 @@
 ---
-title: ""
-date: YYYY-MM-DD
-category: software | music | tea | literature | other
-summary: ""
+name: ""
+date: "YYYY-MM-DD"
+description: ""
+tags: []
+status: "draft" | "published" | "archived"
+duration: "" 
 ---
 
 <!-- Feel free to swap the names of headers, as needed -->

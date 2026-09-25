@@ -6,7 +6,7 @@ tags: ["website", "markdown", "NextJs", "Tailwind", "TypeScript"]
 status: "active"
 type: "Website"
 repoLink: "https://github.com/JoshuahBoardman/personal-website"
-articleLink: "https://joshuahboardman.com/articles/building-my-personal-site"
+articleLink: "https://joshuahboardman.com/articles/150-kb-of-javascript-for-a-age-with-none"
 ---
 
 

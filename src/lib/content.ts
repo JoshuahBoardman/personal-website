@@ -14,9 +14,6 @@ import type { Post, PostType, FrontMatter } from "@/types";
 
 const contentPath = path.join(process.cwd(), "content");
 
-// Cached per post type so repeated calls within a warm server instance
-// (e.g. /articles re-rendering on every filter navigation, since it reads
-// searchParams) don't re-read and re-parse every markdown file from disk.
 const postsCache = new Map<PostType, Post<FrontMatter>[]>();
 
 export function getAllPosts<T extends FrontMatter = FrontMatter>(type: PostType): Post<T>[] {

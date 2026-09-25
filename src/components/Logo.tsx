@@ -1,14 +1,6 @@
 export default function Logo() {
 	return (
 		<div title="Home" className="flex">
-			{/* Superseded by the flower-chip mark below, kept for reference:
-			<div className="grid grid-cols-[repeat(3,7px)] grid-rows-[repeat(3,7px)] gap-[2.5px] p-1.25 rounded-[7px] bg-surface shadow-line">
-				<span className="row-start-1 col-start-3 row-end-3 col-end-4 rounded-[2.5px] bg-rust"></span>
-				<span className="row-start-3 col-start-1 row-end-4 col-end-4 rounded-[2.5px] bg-rust"></span>
-				<span className="row-start-1 col-start-1 row-end-2 col-end-3 rounded-[2.5px] bg-olive opacity-35"></span>
-				<span className="row-start-2 col-start-1 row-end-3 col-end-3 rounded-[2.5px] bg-olive opacity-20"></span>
-			</div>
-			*/}
 			<svg width="30" height="30" viewBox="0 0 64 64" className="block">
 				<g>
 					<g fill="var(--rust)">

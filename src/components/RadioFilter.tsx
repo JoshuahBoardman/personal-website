@@ -109,10 +109,6 @@ export default function RadioFilter({ searchParams, totalItems, filteredItems }:
 		if (searchParams) {
 			dispatch({ type: "sync", params: searchParams });
 		}
-		// Keyed on content (searchParamsKey), not the searchParams reference itself —
-		// this only needs to re-sync when the actual filter values change, not on
-		// every render that happens to pass a new-but-equal array.
-		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [searchParamsKey]);
 
 	useEffect(() => {

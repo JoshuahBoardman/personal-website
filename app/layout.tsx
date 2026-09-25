@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 
 const fraunces = Fraunces({
 	variable: "--font-fraunces",
-	weight: ["400", "600", "700"],
+	weight: ["400", "600"],
 	subsets: ["latin"],
 });
 
@@ -18,7 +18,7 @@ const workSans = Work_Sans({
 
 const jetbrainsMono = JetBrains_Mono({
 	variable: "--font-jetbrains-mono",
-	weight: ["400", "500", "700"],
+	weight: ["400", "500"],
 	subsets: ["latin"],
 });
 

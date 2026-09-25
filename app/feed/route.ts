@@ -24,10 +24,10 @@ export async function GET() {
 		link: SITE_URL,
 		language: "en",
 		//TODO: Update tehse 
-		feedLinks: {
-			json: `${SITE_URL}/feed/json`,
-			atom: `${SITE_URL}/feed/atom`
-		},
+		/*		feedLinks: {
+					json: `${SITE_URL}/feed/json`,
+					atom: `${SITE_URL}/feed/atom`
+				},*/
 		author: author,
 		copyright: `All rights reserved ${new Date().getFullYear()}, Joshuah Boardman`,
 		updated: new Date(),

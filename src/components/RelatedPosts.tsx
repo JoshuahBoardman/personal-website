@@ -3,7 +3,7 @@ import { getAllPosts } from "@/lib/content";
 import { Post, FrontMatter, PostType } from "@/types";
 import Tags from "./Tags";
 
-export default function <T extends FrontMatter = FrontMatter>({ postType, currentPost }: { postType: PostType, currentPost: Post<T> }) {
+export default function RelatedPosts<T extends FrontMatter = FrontMatter>({ postType, currentPost }: { postType: PostType, currentPost: Post<T> }) {
 
 	const relatedPosts = getAllPosts<T>(postType).filter(post => {
 		return post.slug !== currentPost.slug &&

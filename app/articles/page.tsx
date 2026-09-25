@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 };
 
 function filterArticles(posts: Post<ArticleFrontMatter>[], filters: string[] = []): Post<ArticleFrontMatter>[] {
-	let filteredPosts = [...posts];
+	const filteredPosts = [...posts];
 	const sortOldest = filters.includes("oldest");
 
 	filteredPosts.sort((a, b) => {

@@ -85,7 +85,7 @@ export default function RadioFilter({ searchParams, totalItems, filteredItems }:
 
 				break;
 			case "toggle-sort":
-				newState.sort === "oldest" ? newState.sort = "newest" : newState.sort = "oldest";
+				newState.sort = newState.sort === "oldest" ? "newest" : "oldest";
 
 				break;
 			case "toggle-sound":
@@ -103,11 +103,17 @@ export default function RadioFilter({ searchParams, totalItems, filteredItems }:
 		{ tags: [], sort: "newest", soundOn: false } as FilterState
 	);
 
+	const searchParamsKey = searchParams?.join(",");
+
 	useEffect(() => {
 		if (searchParams) {
 			dispatch({ type: "sync", params: searchParams });
 		}
-	}, [searchParams?.join(",")]); //NOTE: I dont think the dependency is needed, but why not...
+		// Keyed on content (searchParamsKey), not the searchParams reference itself —
+		// this only needs to re-sync when the actual filter values change, not on
+		// every render that happens to pass a new-but-equal array.
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [searchParamsKey]);
 
 	useEffect(() => {
 		const urlParams = state.tags.map(tag => {
@@ -123,7 +129,7 @@ export default function RadioFilter({ searchParams, totalItems, filteredItems }:
 		const slug = urlParams.length ? `/articles?${paramString}` : `/articles`;
 		router.push(slug);
 
-	}, [state])
+	}, [state, router])
 
 	return (
 		<section className="grid grid-cols-[minmax(220px,1fr)_auto] gap-4.5 rounded-[18px] bg-surface shadow-line p-4.5 max-[860px]:grid-cols-1">

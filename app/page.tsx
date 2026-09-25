@@ -29,7 +29,7 @@ export default function Home() {
 	return (
 		<div className="max-w-270 my-0 mx-auto fade-up">
 			<div className="flex items-baseline justify-between gap-4 mb-4.5 flex-wrap">
-				<h1 className="text-[30px] leading-[1.2]">What I'm doing right now</h1>
+				<h1 className="text-[30px] leading-[1.2]">What I&apos;m doing right now</h1>
 				<span className="text-[11px] tracking-widest uppercase text-text2 font-mono">Updated {updatedDate}</span>
 			</div>
 			<div className="grid grid-cols-4 gap-3.5 max-[860px]:grid-cols-1">
@@ -72,7 +72,7 @@ export default function Home() {
 						<span>Currently</span> < Clock />
 					</div>
 					<div className="flex gap-3.5 items-baseline text-[13px] leading-normal text-screen-text">
-						<span className="min-w-21.5 opacity-70 tracking-[.08em] uppercase text-[11px]">Reading</span> <span>The Manager's Path - Camille Fournier</span>
+						<span className="min-w-21.5 opacity-70 tracking-[.08em] uppercase text-[11px]">Reading</span> <span>The Manager&apos;s Path - Camille Fournier</span>
 					</div>
 					<div className="flex gap-3.5 items-baseline text-[13px] leading-normal text-screen-text">
 						<span className="min-w-21.5 opacity-70 tracking-[.08em] uppercase text-[11px]">Learning</span> <span>Studying for CompTIA Security+</span>
@@ -81,7 +81,7 @@ export default function Home() {
 						<span className="min-w-21.5 opacity-70 tracking-[.08em] uppercase text-[11px]">Building</span> <span>Fat Lotto - Weighted Lottery Group Decision Bot</span>
 					</div>
 					<div className="flex gap-3.5 items-baseline text-[13px] leading-normal text-screen-text">
-						<span className="min-w-21.5 opacity-70 tracking-[.08em] uppercase text-[11px]">Steeping</span> <span>Piper & Leaf, Monk's Meditation, hot steep</span>
+						<span className="min-w-21.5 opacity-70 tracking-[.08em] uppercase text-[11px]">Steeping</span> <span>Piper & Leaf, Monk&apos;s Meditation, hot steep</span>
 					</div>
 
 				</section>
@@ -112,16 +112,14 @@ export default function Home() {
 				<SmallHomeArticleCard article={articles[3]} />
 
 
-				<Link href="/articles" className="min-w-0">
-					<button className="cursor-pointer text-left border-none rounded-xl bg-surface shadow-line p-5.5 min-h-47.5 flex flex-col justify-between gap-4 text-[12px] tracking-[.08em] uppercase transition-[background,transform,color] duration-200 ease text-text2 font-mono w-full h-full hover:bg-rust hover:text-on-accent hover:-translate-y-0.75">
-						<span className="grid grid-cols-[repeat(2,8px)] gap-0.75">
-							<span className="w-2 h-2 rounded-xs bg-current opacity-[.85]"></span>
-							<span className="w-2 h-2 rounded-xs bg-current opacity-[.5]"></span>
-							<span className="w-2 h-2 rounded-xs bg-current opacity-[.5]"></span>
-							<span className="w-2 h-2 rounded-xs bg-current opacity-[.85]"></span>
-						</span>
-						<span className="text-[15px] tracking-[0.06em]">All Writing<br></br> <span className="opacity-[0.85] text-[11px]">{articles.length} Pieces</span></span>
-					</button>
+				<Link href="/articles" className="min-w-0 cursor-pointer text-left rounded-xl bg-surface shadow-line p-5.5 min-h-47.5 flex flex-col justify-between gap-4 text-[12px] tracking-[.08em] uppercase transition-[background,transform,color] duration-200 ease text-text2 font-mono w-full h-full hover:bg-rust hover:text-on-accent hover:-translate-y-0.75">
+					<span className="grid grid-cols-[repeat(2,8px)] gap-0.75">
+						<span className="w-2 h-2 rounded-xs bg-current opacity-[.85]"></span>
+						<span className="w-2 h-2 rounded-xs bg-current opacity-[.5]"></span>
+						<span className="w-2 h-2 rounded-xs bg-current opacity-[.5]"></span>
+						<span className="w-2 h-2 rounded-xs bg-current opacity-[.85]"></span>
+					</span>
+					<span className="text-[15px] tracking-[0.06em]">All Writing<br></br> <span className="opacity-[0.85] text-[11px]">{articles.length} Pieces</span></span>
 				</Link>
 			</div >
 		</div >

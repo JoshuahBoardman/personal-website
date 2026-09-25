@@ -14,7 +14,15 @@ import type { Post, PostType, FrontMatter } from "@/types";
 
 const contentPath = path.join(process.cwd(), "content");
 
+// Cached per post type so repeated calls within a warm server instance
+// (e.g. /articles re-rendering on every filter navigation, since it reads
+// searchParams) don't re-read and re-parse every markdown file from disk.
+const postsCache = new Map<PostType, Post<FrontMatter>[]>();
+
 export function getAllPosts<T extends FrontMatter = FrontMatter>(type: PostType): Post<T>[] {
+
+	const cached = postsCache.get(type);
+	if (cached) return cached as Post<T>[];
 
 	const directory = path.join(contentPath, type);
 
@@ -22,7 +30,7 @@ export function getAllPosts<T extends FrontMatter = FrontMatter>(type: PostType)
 
 	const files: string[] = fs.readdirSync(directory).filter(file => file.endsWith(".md"));
 
-	return files
+	const posts = files
 		.map(file => {
 			const slug = file.replace(/\.md/g, "");
 			const rawData = fs.readFileSync(path.join(directory, file), "utf-8");
@@ -30,6 +38,9 @@ export function getAllPosts<T extends FrontMatter = FrontMatter>(type: PostType)
 			return { slug, data: data as T, content };
 		})
 		.filter(isRenderablePost);
+
+	postsCache.set(type, posts as Post<FrontMatter>[]);
+	return posts;
 }
 
 function isRenderablePost<T extends FrontMatter>(post: Post<T>): boolean {

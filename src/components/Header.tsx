@@ -30,10 +30,8 @@ export default function Header() {
 						const isActive = section.href === "/" ? path === "/" : path.startsWith(section.href);
 						return (
 
-							<Link key={`nav-${section.name}`} href={section.href}>
-								<button data-nav-active={isActive} className="font-[inherit] cursor-pointer border-none bg-transparent px-2 py-3.25 min-h-6 rounded-lg transition-[color,background] duration-200 text-text2 hover:text-text hover:bg-surface max-[640px]:w-full max-[640px]:px-1.5 max-[640px]:py-2.25 max-[640px]:text-[11px] max-[640px]:text-center">
-									{section.name}
-								</button>
+							<Link key={`nav-${section.name}`} href={section.href} data-nav-active={isActive} className="font-[inherit] cursor-pointer px-2 py-3.25 min-h-6 rounded-lg transition-[color,background] duration-200 text-text2 hover:text-text hover:bg-surface max-[640px]:w-full max-[640px]:px-1.5 max-[640px]:py-2.25 max-[640px]:text-[11px] max-[640px]:text-center">
+								{section.name}
 							</Link>
 						)
 					})}

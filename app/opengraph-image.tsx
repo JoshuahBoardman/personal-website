@@ -6,8 +6,8 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 export default async function Image() {
-	const portraitData = await readFile(join(process.cwd(), "public/portrait.png"));
-	const portraitSrc = `data:image/png;base64,${portraitData.toString("base64")}`;
+	const portraitData = await readFile(join(process.cwd(), "public/portrait-og.jpg"));
+	const portraitSrc = `data:image/jpeg;base64,${portraitData.toString("base64")}`;
 
 	return new ImageResponse(
 		(
@@ -35,6 +35,7 @@ export default async function Image() {
 						src={portraitSrc}
 						width={340}
 						height={425}
+						alt=""
 						style={{ objectFit: "cover", objectPosition: "50% 38%" }}
 					/>
 				</div>

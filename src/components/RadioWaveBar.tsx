@@ -1,7 +1,5 @@
 
-const VOLUME_LEVELS = [1, 2, 3, 4] as const;
-
-type VolumeLevel = typeof VOLUME_LEVELS[number];
+type VolumeLevel = 1 | 2 | 3 | 4;
 
 export default function RadioWaveBar({ volume = 4 }: { volume?: VolumeLevel }) {
 	return (

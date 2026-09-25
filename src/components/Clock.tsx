@@ -1,21 +1,27 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useSyncExternalStore } from "react";
+
+function subscribe(callback: () => void) {
+	const interval = setInterval(callback, 60000);
+	return () => clearInterval(interval);
+}
+
+function getSnapshot(): string {
+	return new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+}
+
+function getServerSnapshot(): null {
+	return null;
+}
 
 export default function Clock() {
 
-	const [time, setTime] = useState<Date | null>(null);
+	const time = useSyncExternalStore(subscribe, getSnapshot, getServerSnapshot);
 
-	useEffect(() => {
-		setTime(new Date());
-		const interval = setInterval(() => setTime(new Date()), 1000);
-		return () => clearInterval(interval);
-	}, []);
-
-	if (!time) return null; // avoids hydration mismatch 
+	if (!time) return null; // avoids hydration mismatch
 
 	return (
-		<span>{time.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}</span>
-
+		<span>{time}</span>
 	);
 }

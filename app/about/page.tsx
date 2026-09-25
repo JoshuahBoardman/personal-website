@@ -49,17 +49,17 @@ export default function About() {
 				<div className="flex flex-col gap-4.5 pt-1">
 					<h1 className="text-[38px] leading-[1.1]">Joshuah Boardman 🌻</h1>
 					<p className="text-lg leading-[1.7] text-text2">
-						Hey there, I'm Joshuah Boardman! I write software for fun and for a living, and
-						I'm working toward moving from web development into systems programming.
+						Hey there, I&apos;m Joshuah Boardman! I write software for fun and for a living, and
+						I&apos;m working toward moving from web development into systems programming.
 
 						Outside of that, I read a lot, play bass, write about the things that matter to
 						me, and drink far too much tea.
 					</p>
 					<p className="text-lg leading-[1.7] text-text2">
 						This site is my cozy nook on the internet. I post about the parts of life that
-						matter to me, and share what I'm learning and building.
+						matter to me, and share what I&apos;m learning and building.
 
-						Follow along if you're curious what I'm up to, or just want to know what I'm
+						Follow along if you&apos;re curious what I&apos;m up to, or just want to know what I&apos;m
 						about.
 					</p>
 				</div>

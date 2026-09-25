@@ -72,7 +72,7 @@ export default function Home() {
 						<span>Currently</span> < Clock />
 					</div>
 					<div className="flex gap-3.5 items-baseline text-[13px] leading-normal text-screen-text">
-						<span className="min-w-21.5 opacity-70 tracking-[.08em] uppercase text-[11px]">Reading</span> <span>The Managers Path - Camille Fournier</span>
+						<span className="min-w-21.5 opacity-70 tracking-[.08em] uppercase text-[11px]">Reading</span> <span>The Manager's Path - Camille Fournier</span>
 					</div>
 					<div className="flex gap-3.5 items-baseline text-[13px] leading-normal text-screen-text">
 						<span className="min-w-21.5 opacity-70 tracking-[.08em] uppercase text-[11px]">Learning</span> <span>Studying for CompTIA Security+</span>

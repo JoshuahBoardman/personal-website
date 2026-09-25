@@ -72,6 +72,15 @@
   box-shadow: inset 0 0 0 1px var(--line);
 }
 
+/* ThemeToggle label — CSS-driven off the <html data-theme> attribute
+   (already set before first paint by the beforeInteractive script in
+   app/layout.tsx) instead of React state, so it's correct from the very
+   first frame with no post-hydration flash of the wrong label. */
+.theme-label-light { display: inline; }
+.theme-label-dark { display: none; }
+[data-theme="dark"] .theme-label-light { display: none; }
+[data-theme="dark"] .theme-label-dark { display: inline; }
+
 .shadow-line { box-shadow: inset 0 0 0 1px var(--line); }
 .hover-shadow-line-lift:hover { box-shadow: inset 0 0 0 1px var(--line), 0 18px 36px -26px rgba(0, 0, 0, .5); }
 .shadow-line-vignette { box-shadow: inset 0 0 0 1px var(--line), inset 0 -40px 60px -40px rgba(28, 23, 18, .35); }

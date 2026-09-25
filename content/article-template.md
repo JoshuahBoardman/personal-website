@@ -1,6 +1,6 @@
 ---
 name: ""
-date: "YYYY-MM-DD"
+date: "MM-DD-YYYY"
 description: ""
 tags: []
 status: "draft" | "published" | "archived"

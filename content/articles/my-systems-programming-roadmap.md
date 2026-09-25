@@ -1,6 +1,6 @@
 ---
 name: "My Systems Programming Roadmap"
-date: "2026-09-25"
+date: "09-25-2026"
 description: "Why I'm moving from web dev into systems programming, and the ten-step roadmap I'm following to get there, from C fundamentals to a toy kernel, debugger, and game engine."
 tags: ["Software"]
 status: "published"

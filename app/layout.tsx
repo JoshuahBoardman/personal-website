@@ -3,7 +3,6 @@ import { Fraunces, Work_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import Script from "next/script";
 
 const fraunces = Fraunces({
 	variable: "--font-fraunces",
@@ -43,13 +42,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
 			suppressHydrationWarning
 			className={`${fraunces.variable} ${workSans.variable} ${jetbrainsMono.variable} h-full antialiased`}>
 			<head>
-				<Script
-					id="theme-init"
-					strategy="beforeInteractive"
+				{/* Deliberately a raw <script>, not next/script's beforeInteractive
+				    (which queues onto self.__next_s for Next's runtime to process
+				    later, reintroducing exactly the flash this exists to prevent).
+				    A plain inline script here is parsed and executed synchronously
+				    by the browser, blocking rendering until data-theme is set. */}
+				<script
 					dangerouslySetInnerHTML={{
 						__html: `(function() {
-          var theme = localStorage.getItem("theme");
-          if (theme) document.documentElement.setAttribute("data-theme", theme);
+          var theme = localStorage.getItem("theme") || "dark";
+          document.documentElement.setAttribute("data-theme", theme);
         })();`,
 					}}
 				/>

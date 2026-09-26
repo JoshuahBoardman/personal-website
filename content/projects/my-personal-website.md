@@ -75,6 +75,3 @@ and projects get added the same way any other content does.
 
 At some point I may add pagination and varioud other small additions.
 
-## Write-up
-
-Read more about this project: [Building my personal site](https://joshuahboardman.com/articles/building-my-personal-site)

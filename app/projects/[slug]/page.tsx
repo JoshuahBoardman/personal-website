@@ -64,13 +64,17 @@ export default async function Page(
 					<span className="opacity-40">/</span><span>{project.data.type}</span>
 				</div>
 				<div className="flex gap-3 flex-wrap max-[640px]:flex-col max-[640px]:items-stretch">
-					<span className="rounded-[10px] bg-rust text-on-accent py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[transform,filter] duration-150 hover:-translate-y-0.5 hover:brightness-[1.08] max-[640px]:text-center">
-						<Link href={project.data.repoLink} target="_blank" rel="noopener noreferrer">View repository →</Link>
-					</span>
+					<Link href={project.data.repoLink} target="_blank" rel="noopener noreferrer">
+						<span className="rounded-[10px] bg-rust text-on-accent py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[transform,filter] duration-150 hover:-translate-y-0.5 hover:brightness-[1.08] max-[640px]:text-center">
+							View repository →
+						</span>
+					</Link>
 					{project.data.articleLink &&
-						<span className="rounded-[10px] bg-surface shadow-line py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[background,transform] duration-150 hover:bg-surface2 hover:-translate-y-0.5 max-[640px]:text-center">
-							<Link href={project.data.articleLink} target="_blank" rel="noopener noreferrer">Related writing</Link>
-						</span>}
+						<Link href={project.data.articleLink} target="_blank" rel="noopener noreferrer">
+							<span className="rounded-[10px] bg-surface shadow-line py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[background,transform] duration-150 hover:bg-surface2 hover:-translate-y-0.5 max-[640px]:text-center">
+								Related writing
+							</span>
+						</Link>}
 				</div>
 			</div>
 
@@ -83,17 +87,21 @@ export default async function Page(
 			</div>
 
 			<div className="flex gap-3 flex-wrap max-[640px]:flex-col max-[640px]:items-stretch">
-				<span className="rounded-[10px] bg-rust text-on-accent py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[transform,filter] duration-150 hover:-translate-y-0.5 hover:brightness-[1.08] max-[640px]:text-center">
-					<Link href={project.data.repoLink} target="_blank" rel="noopener noreferrer">View repository →</Link>
-				</span>
+				<Link href={project.data.repoLink} target="_blank" rel="noopener noreferrer">
+					<span className="rounded-[10px] bg-rust text-on-accent py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[transform,filter] duration-150 hover:-translate-y-0.5 hover:brightness-[1.08] max-[640px]:text-center">
+						View repository →
+					</span>
+				</Link>
 				{project.data.articleLink &&
-					<span className="rounded-[10px] bg-surface shadow-line py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[background,transform] duration-150 hover:bg-surface2 hover:-translate-y-0.5 max-[640px]:text-center">
-						<Link href={project.data.articleLink} target="_blank" rel="noopener noreferrer">Related writing</Link>
-					</span>}
+					<Link href={project.data.articleLink} target="_blank" rel="noopener noreferrer">
+						<span className="rounded-[10px] bg-surface shadow-line py-3.5 px-5.5 text-[12px] tracking-widest uppercase cursor-pointer font-mono transition-[background,transform] duration-150 hover:bg-surface2 hover:-translate-y-0.5 max-[640px]:text-center">
+							Related writing
+						</span>
+					</Link>}
 			</div>
 
 			<RelatedPosts<ProjectFrontMatter> postType={PostType.Project} currentPost={project} />
 
-		</div>
+		</div >
 	);
 }

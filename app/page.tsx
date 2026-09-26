@@ -90,7 +90,7 @@ export default function Home() {
 
 				{activeProjects[0] ? (
 					<Link href={`/projects/${activeProjects[0].slug}`} className="col-span-2 min-w-0 max-[860px]:col-span-1 max-[860px]:row-span-1">
-						<article className="rounded-2xl bg-surface shadow-line p-5.5 flex flex-col gap-4 cursor-pointer transition-[background,transform] duration-200 ease w-full h-full hover:bg-surface2 hover:-translate-y-0.75">
+						<article className="rounded-2xl bg-surface shadow-line border-l-3 border-olive p-5.5 flex flex-col gap-4 cursor-pointer transition-[background,transform] duration-200 ease w-full h-full hover:bg-surface2 hover:-translate-y-0.75">
 							<div className="flex items-center gap-2.5 text-[11px] tracking-widest uppercase text-text2 font-mono">
 								<span className="w-1.75 h-1.75 rounded-xs bg-olive"></span> Active Project
 							</div>
@@ -102,7 +102,7 @@ export default function Home() {
 						</article>
 					</Link>
 				) : (
-					<div className="col-span-2 min-w-0 max-[860px]:col-span-1 max-[860px]:row-span-1 rounded-2xl bg-surface shadow-line p-5.5 flex flex-col gap-4 w-full h-full">
+					<div className="col-span-2 min-w-0 max-[860px]:col-span-1 max-[860px]:row-span-1 rounded-2xl bg-surface shadow-line border-l-3 border-olive p-5.5 flex flex-col gap-4 w-full h-full">
 						<div className="flex items-center gap-2.5 text-[11px] tracking-widest uppercase text-text2 font-mono">
 							<span className="w-1.75 h-1.75 rounded-xs bg-olive opacity-50"></span> Active Project
 						</div>

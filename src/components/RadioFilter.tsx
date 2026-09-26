@@ -109,6 +109,7 @@ export default function RadioFilter({ searchParams, totalItems, filteredItems }:
 		if (searchParams) {
 			dispatch({ type: "sync", params: searchParams });
 		}
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [searchParamsKey]);
 
 	useEffect(() => {

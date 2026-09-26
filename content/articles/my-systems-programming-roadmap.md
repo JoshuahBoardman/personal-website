@@ -35,25 +35,25 @@ The goal of this roadmap is to shore up any weaknesses that I may currently have
 
 Minus the first two steps, I very much want to focus on just writing code. I will have to allocate time to the corresponding resources, but hands on the keyboard is what is going to get these concepts stuck in my mind.
 
-### 01. Get Security+
+### [ ] 01. Get Security+
 
 In my local area, a large amount of the jobs, especially within systems dev, fall under government contracting.
 
 So while this is not directly linked to systems development, I think it's a great opportunity to get back into the flow of studying after taking a bit of a hiatus. It will also shore up any holes in my understanding regarding building secure systems, and it knocks out a required credential on my resume.
 
-### 02. Get LFCS (Linux Foundation Certified System Administrator)
+### [ ] 02. Get LFCS (Linux Foundation Certified System Administrator)
 
 While this is likely not necessary for me, I do use Arch Linux as my daily driver. I want to make sure that there are not things I'm overlooking when administering my machines, along with improving my skills for the future if I ever need to administrate Linux machines professionally.
 
 Ultimately, it is just about being as effective on a Linux machine as possible, since I will literally be doing everything via this OS. I have fallen in love with Linux and its flexibility compared to any other operating system that I have used (Darwin/Windows).
 
-### 03. Lock down C from first principles
+### [ ] 03. Lock down C from first principles
 
 This step is where the systems roadmap really begins. My plan is to tackle K&R's The C Programming Language along with Casey Muratori's Performance-Aware Programming.
 
 My plan is to work through these alongside building some small programs that will help me build intuition around C and how it interacts with a machine. A few ideas I have are a small allocator, a simple shell, a basic text editor, or a C server. I'm committing to building at least two of these, but I'm not sure which ones I will actually choose to build yet.
 
-### 04. Grokking Algorithms (Big-O and core patterns)
+### [ ] 04. Grokking Algorithms (Big-O and core patterns)
 
 In the past, I have spent time going through algorithms and data structures and understanding them enough to know not to create cubic-time monstrosities, or to offload time complexity into a hash table. However, I have not taken the time to build the level of intuition that I am happy with.
 
@@ -61,25 +61,25 @@ I really want to clear any hurdles going into CS:APP, and based off my research,
 
 So my plan is to pair this with writing out each algorithm and structure in C, along with reviewing this periodically down the road throughout the roadmap.
 
-### 05. Work through CS:APP and its labs
+### [ ] 05. Work through CS:APP and its labs
 
 I have heard many good recommendations for Computer Systems: A Programmer's Perspective in regards to the density of information that it provides, especially from Teach Yourself CS (add link).
 
 So I plan on going through all the labs and material within this book and writing small programs in C that will help solidify the fundamental concepts.
 
-### 06. Work through OSTEP and build a toy kernel
+### [ ] 06. Work through OSTEP and build a toy kernel
 
 Now that I have acquired a fair understanding of the fundamentals of systems thinking, I'm going to put these skills to work by following Operating Systems: Three Easy Pieces.
 
 I'll implement what I learn from each section, complemented by the OSDev wiki series, to build a minimal kernel that boots, handles interrupts, and manages memory.
 
-### 07. Build a minimal debugger
+### [ ] 07. Build a minimal debugger
 
 At this point, I will be utilizing my systems and OS knowledge to build a small debugger based around ptrace on Linux.
 
 I plan on it taking about a month to get through, but the goal is for it to be able to set breakpoints, step through instructions, and inspect registers/memory.
 
-### 08. Go deep on Rust alongside continued C/C++
+### [ ] 08. Go deep on Rust alongside continued C/C++
 
 I have started noticing that more systems roles have started requesting knowledge of Rust. I have also heard talks from various sources saying that it is becoming the default for greenfield systems projects.
 
@@ -91,7 +91,7 @@ You may ask: if I plan on learning Rust ultimately, why not just go straight int
 
 During this time, I still want to continue to expand and deepen my C, and maybe some C++, experience.
 
-### 09. Build a toy engine
+### [ ] 09. Build a toy engine
 
 This is the real final step of the roadmap. My plan is to journey through the first 20–30 episodes of Casey Muratori's "Handmade Hero" as a reference and build a small game engine in C with no external libraries.
 
@@ -99,7 +99,7 @@ This will act as my capstone project, along with allowing me to peek into the wo
 
 Depending on how I am feeling during this time, I may also deviate some and try making commits to a real engine, if I enjoy the act of engine dev.
 
-### 10. Package it as a portfolio and start applying
+### [ ] 10. Package it as a portfolio and start applying
 
 At this point, I will have had many opportunities to build actual systems software that I can turn into a portfolio as a reference to my skills.
 

@@ -28,6 +28,7 @@ export default function Home() {
 
 	return (
 		<div className="max-w-270 my-0 mx-auto fade-up">
+			<p className="text-lg leading-[1.6] text-text2 max-w-[60ch] mb-9">Joshuah Boardman&apos;s personal site. Mostly software, occasionally bass, tea, and books.</p>
 			<div className="flex items-baseline justify-between gap-4 mb-4.5 flex-wrap">
 				<h1 className="text-[30px] leading-[1.2]">What I&apos;m doing right now</h1>
 				<span className="text-[11px] tracking-widest uppercase text-text2 font-mono">Updated {updatedDate}</span>
